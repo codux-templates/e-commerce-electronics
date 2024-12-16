@@ -1,4 +1,5 @@
 .root {
+    background-color: var(--text-color);
     --hover-letter-spacing: 0.15em;
     display: grid;
     width: min-content;
@@ -16,7 +17,12 @@
     }
     height: 48px;
     justify-items: center;
+    color: var(--primary1);
+    padding: 0px 10px;
     border-radius: 36px;
+    grid-template-rows: 1fr;
+    box-sizing: border-box;
+    clip-path: border-box;
 }
 
 .label {
@@ -27,9 +33,43 @@
 .label[aria-hidden] {
     visibility: hidden;
     letter-spacing: var(--hover-letter-spacing);
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
 }
 
 .icon {
     width: 50px;
     max-width: unset;
+}
+.div1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    width: 100%;
+    height: 100%;
+}
+.movingUp, .movingDown {
+    background-color: #fff;
+    width: 100px;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    height: 100%;
+    width: 200%;
+    transform: translateY(48px);
+    transition: transform 0s ease-out;
+}
+.movingUp{
+    transition: transform 2s ease-out;
+}
+.movingDown {
+    transform: translateY(0px);
+    background-color: #000;
+    transition: transform 0s ease-out;
+}
+.root:hover .movingUp {
+    transform: translateY(0px);
+}
+.root:hover .movingDown {
+    
+    transform: translateY(48px);
+   
 }

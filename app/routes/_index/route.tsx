@@ -3,16 +3,34 @@ import { CategoryLink } from '~/src/components/category-link/category-link';
 import { FeaturedProductsSection } from '~/src/components/featured-products-section/featured-products-section';
 import { LabelWithArrow } from '~/src/components/label-with-arrow/label-with-arrow';
 import { BackgroundParallax, FadeIn, FloatIn } from '~/src/components/visual-effects';
+import { useRef } from 'react';
 import styles from './route.module.scss';
 import classNames from 'classnames';
 
 export default function HomePage() {
+    const newInRef = useRef(null);
+    function anchorToNewIn() {
+        newInRef.current.scrollIntoView({behavior:'smooth'});
+    }
     return (
         <div>
+            <section className={styles.hero}>
+                <h1 className={styles.header2}>Shop The Top Brand Electronic.</h1>
+                <p className={styles.p1}>Get more for your money with every purchese!</p>
+                <LabelWithArrow className={styles.labelWithArrow} onClick={anchorToNewIn}>Shop Now</LabelWithArrow>
+            </section>
+            <section ref={newInRef} className={styles.newIn}>
+                section2
+            </section>
+            <section className={styles.categories}>section3</section>
+            <section className={styles.bestSellers}>section4</section>
+            <section className={styles.colorSelector}>section5</section>
+            <section className={styles.spotlight}>section5</section>
+            <section className={styles.review}>section5</section>
             <div className={classNames('heroBanner', styles.div1)}>
                 <div>
                     <div className="heroBannerSubtitle">ReClaim</div>
-                    <h1 className={styles.header1}>BUY The Top Brand Electronic.</h1>
+                    <h1 className={styles.header1}>Shop The Top Brand Electronic.</h1>
                     <CategoryLink categorySlug="all-products"></CategoryLink>
                 </div>
                 <LabelWithArrow className={styles.labelWithArrow}>Shop Collections</LabelWithArrow>

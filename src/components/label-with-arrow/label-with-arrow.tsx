@@ -9,9 +9,8 @@ export const LabelWithArrow: FC<HTMLAttributes<HTMLDivElement>> = ({
 }) => {
     return (
         <div {...props} className={classNames(styles.root, className)}>
-            <div className={styles.label} aria-hidden>
-                {children}
-            </div>
+            <div className={styles.movingUp}></div>
+            <div className={styles.movingDown}></div>
             <div className={styles.label}>{children}</div>
         </div>
     );
