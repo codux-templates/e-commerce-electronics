@@ -15,7 +15,7 @@ export default function HomePage() {
     return (
         <div>
             <section className={styles.hero}>
-                <h1 className={styles.header2}>Shop The Top Brand Electronic.</h1>
+                <h1 className={styles.header2}>Shop The Top Brand Electronicy.</h1>
                 <p className={styles.p1}>Get more for your money with every purchese!</p>
                 <LabelWithArrow
                     className={styles.labelWithArrow}
