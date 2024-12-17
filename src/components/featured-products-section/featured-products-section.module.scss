@@ -5,36 +5,45 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--page-background-color);
+    min-height: 80vh;
 }
 
 .header {
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
     gap: 20px;
     width: 100%;
     margin-bottom: 75px;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .headerTitle {
     font: var(--heading3);
     font-size: 3vw;
+    text-align: center;
+    letter-spacing: 0.04rem;
 }
 
 .headerDescription {
-    width: 83%;
     font: var(--paragraph1);
     font-size: 20px;
     text-wrap: balance;
+    max-width: 300px;
+    text-align: center;
 }
 
 .products {
     display: grid;
     grid-auto-flow: column;
-    gap: 4px;
+    gap: 0px 10px;
     width: max-content;
     justify-items: center;
     align-content: end;
+    align-items: end;
 }
 
 @media (max-width: 1024px) {

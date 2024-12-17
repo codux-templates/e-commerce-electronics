@@ -22,7 +22,7 @@ export const FeaturedProductsSection = (props: FeaturedProductsSectionProps) => 
     return (
         <div className={classNames(styles.root, className)}>
             <FadeIn className={styles.header} duration={1.8}>
-                <h3 className={styles.headerTitle}>{title ?? category?.name ?? categorySlug}</h3>
+                <h3 className={styles.headerTitle}>{'New In.'}</h3>
                 <div className={styles.headerDescription}>
                     {description ?? category?.description}
                 </div>

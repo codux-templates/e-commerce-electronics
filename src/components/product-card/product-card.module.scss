@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 20vw;
-    height: 25vw;
+    height: 24vw;
     padding: 23px;
     row-gap: 10px;
     justify-content: space-between;
@@ -10,7 +10,11 @@
     align-items: center;
     background: var(--primary3);
     border: 0px solid black;
-    border-radius: 114px;
+    border-radius: 14px;
+    &:hover {
+        width: 24vw;
+        height: 30vw;
+    }
 }
 
 .imageWrapper {
@@ -24,6 +28,7 @@
     object-fit: cover;
     aspect-ratio: 3.5/4;
     width: 70%;
+    margin-top: 15px;
 }
 
 .imagePlaceholderIcon {
