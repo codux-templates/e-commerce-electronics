@@ -16,6 +16,7 @@
 }
 .root {
     display: flex;
+    user-select: none;
     border-radius: 360px;
     box-sizing: border-box;
     cursor: pointer;
@@ -25,10 +26,10 @@
     font-size: 24px;
     letter-spacing: 0.04em;
     text-align: center;
-    animation-duration: 0.3s;
+    animation-duration: 0.0s;
     animation-fill-mode: backwards;
     animation-iteration-count: 1;
-    animation-timing-function: ease-out;
+    animation-timing-function: ease-in-out;
     animation-play-state: running;
     animation-name: bgbuttonOut;
     background-size: 100% 300%;
@@ -36,12 +37,16 @@
     padding: var(--verticalSpacing) var(--horizontalSpacing);
     color: var(--primary1);
     border: solid 1px var(--bgColor1);
+    background-position-y: 100%;
+}
+.root[loaded="true"]{
+    animation-duration: 0.3s;
 }
 .root:hover {
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-name: bgbuttonHover;
-    animation-timing-function: ease-in;
+    animation-timing-function: ease-in-out;
 }
 .root > span{
     mix-blend-mode: exclusion;
