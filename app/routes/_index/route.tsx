@@ -82,7 +82,7 @@ export default function HomePage() {
 
             <FeaturedProductsSection
                 className="alternateBackground"
-                categorySlug="new-in"
+                categorySlug="mobile"
                 title="New In"
                 description="Embrace a sustainable lifestyle with our newest drop-ins."
                 productCount={4}
@@ -111,7 +111,7 @@ export default function HomePage() {
             </BackgroundParallax>
 
             <FeaturedProductsSection
-                categorySlug="best-sellers"
+                categorySlug="mobile"
                 title="Best Sellers"
                 description="When quality is eco-friendly. Explore our top picks."
                 productCount={4}
