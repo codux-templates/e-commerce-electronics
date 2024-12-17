@@ -30,7 +30,11 @@ export const FeaturedProductsSection = (props: FeaturedProductsSectionProps) => 
             <Reveal className={styles.products} direction="down" duration={1.4}>
                 {products
                     ? products.items.map((product) => (
-                          <ProductLink key={product._id} productSlug={product.slug!}>
+                          <ProductLink
+                              key={product._id}
+                              productSlug={product.slug!}
+                              className={styles.productLink}
+                          >
                               <ProductCard
                                   name={product.name!}
                                   imageUrl={getProductImageUrl(product, { minHeight: 700 })}

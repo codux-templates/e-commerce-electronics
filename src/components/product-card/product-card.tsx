@@ -30,6 +30,18 @@ export const ProductCard = ({
 }: ProductCardProps) => {
     return (
         <div className={styles.productCard}>
+            <div>
+                <div className={styles.name}>{name}</div>
+                {inventoryStatus === products.InventoryStatus.OUT_OF_STOCK ? (
+                    <div className={styles.outOfStock}>Out of stock</div>
+                ) : (
+                    <ProductPrice
+                        className={styles.price}
+                        price={price}
+                        discountedPrice={discountedPrice}
+                    />
+                )}
+            </div>
             <div className={styles.imageWrapper}>
                 {imageUrl ? (
                     <img src={imageUrl} alt={name} className={styles.image} />
@@ -39,18 +51,6 @@ export const ProductCard = ({
 
                 {ribbon && <span className={styles.ribbon}>{ribbon}</span>}
             </div>
-
-            <div className={styles.name}>{name}</div>
-
-            {inventoryStatus === products.InventoryStatus.OUT_OF_STOCK ? (
-                <div className={styles.outOfStock}>Out of stock</div>
-            ) : (
-                <ProductPrice
-                    className={styles.price}
-                    price={price}
-                    discountedPrice={discountedPrice}
-                />
-            )}
         </div>
     );
 };

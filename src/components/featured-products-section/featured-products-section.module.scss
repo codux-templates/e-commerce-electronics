@@ -1,6 +1,10 @@
 .root {
     margin: 0 calc(-1 * var(--pagePaddingHoriz));
     padding: 75px var(--pagePaddingHoriz);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header {
@@ -26,10 +30,11 @@
 
 .products {
     display: grid;
-    grid-auto-columns: minmax(0, 640px);
     grid-auto-flow: column;
     gap: 4px;
-    width: 100%;
+    width: max-content;
+    justify-items: center;
+    align-content: end;
 }
 
 @media (max-width: 1024px) {
@@ -64,4 +69,6 @@
         grid-auto-flow: row;
         gap: 26px 10px;
     }
+}
+.productLink {
 }
