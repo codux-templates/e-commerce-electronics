@@ -3,20 +3,27 @@
     flex-direction: column;
     width: 20vw;
     height: 25vw;
+    padding: 23px;
+    row-gap: 10px;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    background: var(--primary3);
+    border: 0px solid black;
+    border-radius: 114px;
 }
 
 .imageWrapper {
     position: relative;
-    aspect-ratio: 3 / 4;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .image {
-    width: 70%;
-    height: 70%;
     object-fit: cover;
+    aspect-ratio: 3.5/4;
+    width: 70%;
 }
 
 .imagePlaceholderIcon {
@@ -37,11 +44,12 @@
 }
 
 .name {
-    margin-top: 16px;
-    margin-bottom: 4px;
     font-family: var(--heading-font);
     font-size: 16px;
     line-height: 20px;
+    font: var(--paragraph2);
+    font-variant: normal;
+    font-weight: 800;
 }
 
 .price {
@@ -55,4 +63,21 @@
 
 .skeleton > .imageWrapper {
     background: #f1ede7;
+}
+.variant {
+    font: var(--paragraph2);
+}
+.div1 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    align-content: start;
+    gap: 2px 0px;
+}
+.div2 {
+    display: flex;
+    flex-direction: column;
+}
+.labelWithArrow {
+    margin: 20px;
 }

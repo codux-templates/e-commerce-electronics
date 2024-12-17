@@ -20,14 +20,20 @@ export default function HomePage() {
                 <LabelWithArrow
                     className={styles.labelWithArrow}
                     onClick={anchorToNewIn}
-                    btLabel="Buy Now"
+                    btLabel="Shop Now"
                     bgColor1="#000000"
                     horizontalSpacing="20"
                     verticalSpacing="12"
                 />
             </section>
             <section ref={newInRef} className={styles.newIn}>
-                section2
+                <FeaturedProductsSection
+                    className="alternateBackground"
+                    categorySlug="mobile"
+                    title="New In"
+                    description="Embrace a sustainable lifestyle with our newest drop-ins."
+                    productCount={4}
+                />
             </section>
             <section className={styles.categories}>section3</section>
             <section className={styles.bestSellers}>section4</section>
@@ -79,14 +85,6 @@ export default function HomePage() {
                     <div className="linkCardTitle">On the Go</div>
                 </CategoryLink>
             </div>
-
-            <FeaturedProductsSection
-                className="alternateBackground"
-                categorySlug="mobile"
-                title="New In"
-                description="Embrace a sustainable lifestyle with our newest drop-ins."
-                productCount={4}
-            />
 
             <BackgroundParallax
                 className="floatingCardBackground"
