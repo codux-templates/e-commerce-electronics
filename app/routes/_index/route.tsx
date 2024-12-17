@@ -10,14 +10,21 @@ import classNames from 'classnames';
 export default function HomePage() {
     const newInRef = useRef(null);
     function anchorToNewIn() {
-        newInRef.current.scrollIntoView({behavior:'smooth'});
+        newInRef.current.scrollIntoView({ behavior: 'smooth' });
     }
     return (
         <div>
             <section className={styles.hero}>
                 <h1 className={styles.header2}>Shop The Top Brand Electronic.</h1>
                 <p className={styles.p1}>Get more for your money with every purchese!</p>
-                <LabelWithArrow className={styles.labelWithArrow} onClick={anchorToNewIn}>Shop Now</LabelWithArrow>
+                <LabelWithArrow
+                    className={styles.labelWithArrow}
+                    onClick={anchorToNewIn}
+                    btLabel="Buy Now"
+                    bgColor1="#000000"
+                    horizontalSpacing="20"
+                    verticalSpacing="12"
+                />
             </section>
             <section ref={newInRef} className={styles.newIn}>
                 section2
