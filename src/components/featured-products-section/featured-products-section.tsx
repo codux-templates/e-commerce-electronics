@@ -40,6 +40,7 @@ export const FeaturedProductsSection = (props: FeaturedProductsSectionProps) => 
                                           product.priceData?.formatted?.discountedPrice
                                       }
                                       ribbon={product.ribbon ?? undefined}
+                                      className={styles.productCard}
                                   />
                               </ProductLink>
                           ))
