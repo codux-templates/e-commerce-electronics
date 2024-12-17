@@ -15,8 +15,8 @@ export default function HomePage() {
     return (
         <div>
             <section className={styles.hero}>
-                <h1 className={styles.header2}>Shop The Top Brand Electronicy.</h1>
-                <p className={styles.p1}>Get more for your money with every purchese!</p>
+                <h1 className={styles.header2}>Shop The Top Brand Electronic.</h1>
+                <p className={styles.p1}>Get more for your money with every purchase!</p>
                 <LabelWithArrow
                     className={styles.labelWithArrow}
                     onClick={anchorToNewIn}
@@ -83,7 +83,7 @@ export default function HomePage() {
 
             <FeaturedProductsSection
                 className="alternateBackground"
-                categorySlug="new-in"
+                categorySlug="mobile"
                 title="New In"
                 description="Embrace a sustainable lifestyle with our newest drop-ins."
                 productCount={4}
@@ -112,7 +112,7 @@ export default function HomePage() {
             </BackgroundParallax>
 
             <FeaturedProductsSection
-                categorySlug="best-sellers"
+                categorySlug="mobile"
                 title="Best Sellers"
                 description="When quality is eco-friendly. Explore our top picks."
                 productCount={4}
