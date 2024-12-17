@@ -24,6 +24,7 @@ export default function HomePage() {
                     bgColor1="#000000"
                     horizontalSpacing="20"
                     verticalSpacing="12"
+                    bgColor2="#ffffff"
                 />
             </section>
             <section ref={newInRef} className={styles.newIn}>

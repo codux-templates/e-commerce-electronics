@@ -9,7 +9,20 @@ export interface LabelWithArrowProps {
     className?: string;
     btLabel?: string;
 }
-
+export const LabelWithArrow = ({ className, bgColor1, bgColor2, btLabel, verticalSpacing,horizontalSpacing }: LabelWithArrowProps) => {
+    return (
+        <div
+            style={{
+                '--bgColor1': bgColor1 ? `${bgColor1}` : '#000000',
+                '--bgColor2': bgColor2 ? `${bgColor2}` : '#ffffff',
+                '--verticalSpacing': verticalSpacing ? `${verticalSpacing}px`  : '20px',
+                '--horizontalSpacing': horizontalSpacing ? `${horizontalSpacing}px` : '20px',
+            }}
+            className={classNames(styles.root, className)}
+        ><span>{btLabel}</span></div>
+    );
+};
+/*
 export const LabelWithArrow = ({ className, bgColor1, bgColor2, btLabel, verticalSpacing,horizontalSpacing }: LabelWithArrowProps) => {
     return (
         <div
@@ -26,4 +39,4 @@ export const LabelWithArrow = ({ className, bgColor1, bgColor2, btLabel, vertica
             <div className={styles.border}></div>
         </div>
     );
-};
+};*/
