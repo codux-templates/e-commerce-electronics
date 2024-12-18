@@ -1,5 +1,6 @@
 import { HTMLMotionProps, motion } from 'motion/react';
 import { FC } from 'react';
+import styles from './fade-in.module.scss';
 
 export interface FadeInProps extends HTMLMotionProps<'div'> {
     /** Animation duration in seconds, default: 1.8 */
@@ -18,5 +19,6 @@ export const FadeIn: FC<FadeInProps> = ({ duration = 1.8, viewportMargin, ...pro
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: viewportMargin }}
         {...props}
+        className={styles.motionDiv}
     />
 );
