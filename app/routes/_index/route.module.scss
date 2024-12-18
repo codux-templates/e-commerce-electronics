@@ -9,6 +9,11 @@
 
 .hero {
     height: 100vh;
+    display: grid;
+    grid-template-rows: max-content max-content max-content 1fr;
+    gap: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 .newIn {
     height: 100vh;
@@ -26,6 +31,9 @@
 }
 .header2 {
     font: var(--heading1);
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    height: max-content;
 }
 .p1 {
     font: var(--heading4);

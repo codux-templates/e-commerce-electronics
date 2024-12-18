@@ -6,19 +6,22 @@ import { FC, HTMLAttributes } from 'react';
 export interface LabelWithArrowProps {
     onClick?(): void;
     className?: string;
+    /** @visualizer color */
     bgColor1?: string;
+    /** @visualizer color */
     bgColor2?: string;
     verticalSpacing?: number;
     horizontalSpacing?: number;
     text?: string;
 }
-export const LabelWithArrow = ({
+export const LabelWithArrow = ({ 
     onClick,
     className,
     bgColor1,
     bgColor2,
     text,
     verticalSpacing,
+
     horizontalSpacing,
 }: LabelWithArrowProps) => {
     const [animationBegin, setAnimationBegin] = useState(0);
@@ -34,7 +37,7 @@ export const LabelWithArrow = ({
             onClick={onClick}
             onAnimationEnd={onAnimationEnd}
             style={{
-                '--bgColor1': bgColor1 ? `${bgColor1}` : '#000000',
+                '--bgColor1': bgColor1 ? `${bgColor1}` : '#000009',
                 '--bgColor2': bgColor2 ? `${bgColor2}` : '#ffffff',
                 '--verticalSpacing': verticalSpacing ? `${verticalSpacing}px` : '20px',
                 '--horizontalSpacing': horizontalSpacing ? `${horizontalSpacing}px` : '20px',
