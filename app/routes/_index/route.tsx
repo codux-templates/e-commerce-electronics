@@ -2,6 +2,7 @@ import type { MetaFunction } from '@remix-run/react';
 import { CategoryLink } from '~/src/components/category-link/category-link';
 import { FeaturedProductsSection } from '~/src/components/featured-products-section/featured-products-section';
 import { LabelWithArrow } from '~/src/components/label-with-arrow/label-with-arrow';
+import { TestNewComponent } from '~/src/components/test-new-component/test-new-component';
 import { BackgroundParallax, FadeIn, FloatIn } from '~/src/components/visual-effects';
 import { useRef } from 'react';
 import styles from './route.module.scss';
@@ -10,6 +11,7 @@ import classNames from 'classnames';
 export default function HomePage() {
     const newInRef = useRef(null);
     function anchorToNewIn() {
+        console.log('xx');
         newInRef.current.scrollIntoView({ behavior: 'smooth' });
     }
     return (
@@ -20,10 +22,14 @@ export default function HomePage() {
                 <LabelWithArrow
                     className={styles.labelWithArrow}
                     onClick={anchorToNewIn}
+
                     btLabel="Shop Now"
+
                     bgColor1="#000000"
-                    horizontalSpacing="20"
+                    horizontalSpacing="30"
                     verticalSpacing="12"
+                    bgColor2="#ffffff"
+                    text="Buy Now"
                 />
             </section>
             <section ref={newInRef} className={styles.newIn}>
@@ -63,7 +69,7 @@ export default function HomePage() {
                 <CategoryLink categorySlug="kitchen-essentials" className="linkCard">
                     <img
                         className="linkCardBackground"
-                        src="https://static.wixstatic.com/media/c837a6_c05a03f48fbd49e7b5046d1b18c930eb~mv2.jpg/v1/fill/w_547,h_730,q_90/c837a6_c05a03f48fbd49e7b5046d1b18c930eb~mv2.jpg"
+                        src="https://static.wixstatic.com/media/4da84e_f55bb718fbd0473381a349b611c5acd4~mv2.jpg/v1/fit/w_640,h_640/Headphones-01-Header_edited 1.jpg.jpg"
                         alt=""
                     />
                     <div className="linkCardTitle">Kitchen</div>
@@ -109,6 +115,7 @@ export default function HomePage() {
             </BackgroundParallax>
 
             <FeaturedProductsSection
+                onClick={anchorToNewIn}
                 categorySlug="mobile"
                 title="Best Sellers"
                 description="When quality is eco-friendly. Explore our top picks."

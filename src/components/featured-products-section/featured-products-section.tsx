@@ -27,6 +27,7 @@ export const FeaturedProductsSection = (props: FeaturedProductsSectionProps) => 
                     {description ?? category?.description}
                 </div>
             </FadeIn>
+
             <Reveal className={styles.products} direction="down" duration={1.4}>
                 {products
                     ? products.items.map((product) => (
@@ -48,6 +49,28 @@ export const FeaturedProductsSection = (props: FeaturedProductsSectionProps) => 
                           <ProductCardSkeleton key={i} />
                       ))}
             </Reveal>
+
+            <div className={styles.div1}>
+                <Reveal className={styles.products} direction="down" duration={1.4}>
+                    {products
+                        ? products.items.map((product) => (
+                              <ProductLink key={product._id} productSlug={product.slug!}>
+                                  <ProductCard
+                                      name={product.name!}
+                                      imageUrl={getProductImageUrl(product, { minHeight: 700 })}
+                                      price={product.priceData?.formatted?.price}
+                                      discountedPrice={
+                                          product.priceData?.formatted?.discountedPrice
+                                      }
+                                      ribbon={product.ribbon ?? undefined}
+                                  />
+                              </ProductLink>
+                          ))
+                        : Array.from({ length: productCount }).map((_, i) => (
+                              <ProductCardSkeleton key={i} />
+                          ))}
+                </Reveal>
+            </div>
         </div>
     );
 };

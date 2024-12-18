@@ -66,7 +66,7 @@ export const ProductCard = ({
 };
 
 export const ProductCardSkeleton = () => (
-    <div className={styles.skeleton}>
+    <div className={classNames(styles.skeleton, styles.div1)}>
         <div className={styles.imageWrapper} />
         <div className={styles.name}>&nbsp;</div>
         <div className={styles.price}>&nbsp;</div>
