@@ -8,16 +8,16 @@ export interface LabelWithArrowProps {
     className?: string;
     bgColor1?: string;
     bgColor2?: string;
-    verticalSpacing?: string;
-    horizontalSpacing?: string;
-    btLabel?: string;
+    verticalSpacing?: number;
+    horizontalSpacing?: number;
+    text?: string;
 }
 export const LabelWithArrow = ({
     onClick,
     className,
     bgColor1,
     bgColor2,
-    btLabel,
+    text,
     verticalSpacing,
     horizontalSpacing,
 }: LabelWithArrowProps) => {
@@ -26,7 +26,7 @@ export const LabelWithArrow = ({
         if (animationBegin == 0) {
             e.target.setAttribute('loaded', 'true');
             setAnimationBegin(animationBegin + 1);
-            console.log("onAnimationEnd")
+            console.log('onAnimationEnd');
         }
     };
     return (
@@ -41,7 +41,7 @@ export const LabelWithArrow = ({
             }}
             className={classNames(styles.root, className)}
         >
-            <span>{btLabel}</span>
+            <span>{text}</span>
         </div>
     );
 };

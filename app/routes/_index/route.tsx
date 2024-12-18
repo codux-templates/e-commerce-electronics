@@ -11,23 +11,24 @@ import classNames from 'classnames';
 export default function HomePage() {
     const newInRef = useRef(null);
     function anchorToNewIn() {
-        console.log("xx")
+        console.log('xx');
         newInRef.current.scrollIntoView({ behavior: 'smooth' });
     }
     return (
         <div>
             <section className={styles.hero}>
                 <h1 className={styles.header2}>Shop The Top Brand Electronic.</h1>
-                <p  className={styles.p1}>Get more for your money with every purchase!</p>
-                
-                <LabelWithArrow  
-                    className={styles.labelWithArrow}  onClick={anchorToNewIn}
-                    btLabel="Buy Now"
+                <p className={styles.p1}>Get more for your money with every purchase!</p>
+
+                <LabelWithArrow
+                    className={styles.labelWithArrow}
+                    onClick={anchorToNewIn}
                     bgColor1="#000000"
-                    horizontalSpacing="20"
+                    horizontalSpacing="30"
                     verticalSpacing="12"
                     bgColor2="#ffffff"
-                ></LabelWithArrow>
+                    text="Buy Now"
+                />
             </section>
             <section ref={newInRef} className={styles.newIn}>
                 section2
@@ -41,7 +42,7 @@ export default function HomePage() {
                 <div>
                     <div className="heroBannerSubtitle">ReClaim</div>
                     <h1 className={styles.header1}>Shop The Top Brand Electronic.</h1>
-                    <CategoryLink  categorySlug="all-products"></CategoryLink>
+                    <CategoryLink categorySlug="all-products"></CategoryLink>
                 </div>
                 <LabelWithArrow className={styles.labelWithArrow}>Shop Collections</LabelWithArrow>
             </div>
@@ -57,7 +58,7 @@ export default function HomePage() {
                 </FadeIn>
             </div>
             <div className="cardsSection">
-                <CategoryLink  categorySlug="kitchen-essentials" className="linkCard">
+                <CategoryLink categorySlug="kitchen-essentials" className="linkCard">
                     <img
                         className="linkCardBackground"
                         src="https://static.wixstatic.com/media/c837a6_c05a03f48fbd49e7b5046d1b18c930eb~mv2.jpg/v1/fill/w_547,h_730,q_90/c837a6_c05a03f48fbd49e7b5046d1b18c930eb~mv2.jpg"
@@ -113,7 +114,8 @@ export default function HomePage() {
                 </FloatIn>
             </BackgroundParallax>
 
-            <FeaturedProductsSection onClick={anchorToNewIn}
+            <FeaturedProductsSection
+                onClick={anchorToNewIn}
                 categorySlug="mobile"
                 title="Best Sellers"
                 description="When quality is eco-friendly. Explore our top picks."
