@@ -2,6 +2,7 @@ import { products } from '@wix/stores';
 import styles from './product-card.module.scss';
 import { ProductPrice } from '../product-price/product-price';
 import { ImagePlaceholderIcon } from '../icons';
+import classNames from 'classnames';
 
 interface ProductCardProps {
     name: string;
@@ -56,7 +57,7 @@ export const ProductCard = ({
 };
 
 export const ProductCardSkeleton = () => (
-    <div className={styles.skeleton}>
+    <div className={classNames(styles.skeleton, styles.div1)}>
         <div className={styles.imageWrapper} />
         <div className={styles.name}>&nbsp;</div>
         <div className={styles.price}>&nbsp;</div>

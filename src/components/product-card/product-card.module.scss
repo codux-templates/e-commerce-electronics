@@ -55,3 +55,11 @@
 .skeleton > .imageWrapper {
     background: #f1ede7;
 }
+.div1 {
+    width: 22vw;
+    &:hover {
+        transition: all 0.3s ease;
+        width: 25vw;
+    }
+    align-content: end;
+}

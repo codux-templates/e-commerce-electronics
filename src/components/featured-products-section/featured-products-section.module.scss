@@ -26,10 +26,12 @@
 
 .products {
     display: grid;
-    grid-auto-columns: minmax(0, 640px);
     grid-auto-flow: column;
-    gap: 4px;
-    width: 100%;
+    gap: 16px;
+    width: max-content;
+    align-items: end;
+    justify-content: center;
+    justify-items: center;
 }
 
 @media (max-width: 1024px) {
@@ -64,4 +66,8 @@
         grid-auto-flow: row;
         gap: 26px 10px;
     }
+}
+.div1 {
+    height: 800px;
+    align-content: end;
 }
