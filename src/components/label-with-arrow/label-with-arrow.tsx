@@ -37,7 +37,7 @@ export const LabelWithArrow = ({
             onClick={onClick}
             onAnimationEnd={onAnimationEnd}
             style={{
-                '--bgColor1': bgColor1 ? `${bgColor1}` : '#000009',
+                '--bgColor1': bgColor1 ? `${bgColor1}` : '#000000',
                 '--bgColor2': bgColor2 ? `${bgColor2}` : '#ffffff',
                 '--verticalSpacing': verticalSpacing ? `${verticalSpacing}px` : '20px',
                 '--horizontalSpacing': horizontalSpacing ? `${horizontalSpacing}px` : '20px',
