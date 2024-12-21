@@ -35,7 +35,7 @@ export default function HomePage() {
             <section ref={newInRef} className={styles.newIn}>
                 <FeaturedProductsSection
                     className="alternateBackground"
-                    categorySlug="mobile"
+                    categorySlug="new-in"
                     title="New In"
                     description="Embrace a sustainable lifestyle with our newest drop-ins."
                     productCount={4}
