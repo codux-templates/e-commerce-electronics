@@ -22,15 +22,20 @@ export const FeaturedProductsSection = (props: FeaturedProductsSectionProps) => 
     return (
         <div className={classNames(styles.root, className)}>
             <FadeIn className={styles.header} duration={1.8}>
-                <h3 className={styles.headerTitle}>{title ?? category?.name ?? categorySlug}</h3>
+                <h3 className={styles.headerTitle}>{'New In.'}</h3>
                 <div className={styles.headerDescription}>
                     {description ?? category?.description}
                 </div>
             </FadeIn>
+
             <Reveal className={styles.products} direction="down" duration={1.4}>
                 {products
                     ? products.items.map((product) => (
-                          <ProductLink key={product._id} productSlug={product.slug!}>
+                          <ProductLink
+                              key={product._id}
+                              productSlug={product.slug!}
+                              className={styles.productLink}
+                          >
                               <ProductCard
                                   name={product.name!}
                                   imageUrl={getProductImageUrl(product, { minHeight: 700 })}
@@ -44,6 +49,28 @@ export const FeaturedProductsSection = (props: FeaturedProductsSectionProps) => 
                           <ProductCardSkeleton key={i} />
                       ))}
             </Reveal>
+
+            <div className={styles.div1}>
+                <Reveal className={styles.products} direction="down" duration={1.4}>
+                    {products
+                        ? products.items.map((product) => (
+                              <ProductLink key={product._id} productSlug={product.slug!}>
+                                  <ProductCard
+                                      name={product.name!}
+                                      imageUrl={getProductImageUrl(product, { minHeight: 700 })}
+                                      price={product.priceData?.formatted?.price}
+                                      discountedPrice={
+                                          product.priceData?.formatted?.discountedPrice
+                                      }
+                                      ribbon={product.ribbon ?? undefined}
+                                  />
+                              </ProductLink>
+                          ))
+                        : Array.from({ length: productCount }).map((_, i) => (
+                              <ProductCardSkeleton key={i} />
+                          ))}
+                </Reveal>
+            </div>
         </div>
     );
 };

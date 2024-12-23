@@ -1,32 +1,73 @@
-.root {
-    --hover-letter-spacing: 0.15em;
-    display: grid;
-    width: min-content;
-    grid-template-columns: 1fr min-content;
-    align-items: center;
-    gap: 20px;
-    font: var(--heading5);
-    font-size: 15px;
-    letter-spacing: 0.04em;
-    text-align: left;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    &:hover {
-        letter-spacing: var(--hover-letter-spacing);
+@keyframes bgbuttonHover {
+    0% {
+        background-position-y: 0%;
+    }
+    100% {
+         background-position-y: 50%;
     }
 }
-
-.label {
-    white-space: nowrap;
-    grid-area: 1 / 1;
+@keyframes bgbuttonOut {
+    0% {
+        background-position-y: 50%;
+    }
+    100% {
+         background-position-y: 100%;
+    }
+}
+.root {
+    display: flex;
+    user-select: none;
+    border-radius: 360px;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: max-content;
+    align-items: center;
+    font: var(--heading5);
+    font-size: 24px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    animation-duration: 0.0s;
+    animation-fill-mode: backwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-play-state: running;
+    animation-name: bgbuttonOut;
+    background-size: 100% 300%;
+    background-image: linear-gradient(var(--bgColor1) 33.333%, var(--bgColor2) 33.33%, var(--bgColor2) 66.66%, var(--bgColor1) 66.666%);
+    padding: var(--verticalSpacing) var(--horizontalSpacing);
+    color: var(--primary1);
+    border: solid 1px var(--bgColor1);
+    background-position-y: 100%;
+}
+.root[loaded="true"]{
+    animation-duration: 0.3s;
+}
+.root:hover {
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-name: bgbuttonHover;
+    animation-timing-function: ease-in-out;
 }
 
-.label[aria-hidden] {
-    visibility: hidden;
-    letter-spacing: var(--hover-letter-spacing);
+.border {
+    border: solid 1px var(--bgColor1);
+    border-radius: 360px;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    grid-row: 1 / 4;
+    grid-column: 1 / 4;
+    font-weight: 800;
+    font: var(--heading5);
+
+.root > span{
+    mix-blend-mode: exclusion;
+    white-space: nowrap;
+
 }
 
 .icon {
     width: 50px;
     max-width: unset;
 }
+

@@ -2,26 +2,58 @@ import type { MetaFunction } from '@remix-run/react';
 import { CategoryLink } from '~/src/components/category-link/category-link';
 import { FeaturedProductsSection } from '~/src/components/featured-products-section/featured-products-section';
 import { LabelWithArrow } from '~/src/components/label-with-arrow/label-with-arrow';
+import { TestNewComponent } from '~/src/components/test-new-component/test-new-component';
 import { BackgroundParallax, FadeIn, FloatIn } from '~/src/components/visual-effects';
+import { useRef } from 'react';
+import styles from './route.module.scss';
+import classNames from 'classnames';
 
 export default function HomePage() {
+    const newInRef = useRef(null);
+    function anchorToNewIn() {
+        console.log('xx');
+        newInRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
     return (
         <div>
-            <div className="heroBanner">
-                <img
-                    src="https://static.wixstatic.com/media/32aab9_2c3c65e142434906992aedb17db53566~mv2.jpg"
-                    className="heroBannerImage"
-                    alt=""
-                />
-                <div className="heroBannerOverlay">
-                    <div className="heroBannerSubtitle">ReClaim</div>
-                    <h1 className="heroBannerTitle">Reuse. Repurpose. Relove.</h1>
-                    <CategoryLink categorySlug="all-products">
-                        <LabelWithArrow>Shop Collections</LabelWithArrow>
-                    </CategoryLink>
-                </div>
-            </div>
+            <section className={styles.hero}>
+                <h1 className={styles.header2}>Shop The Top Brand Electronic.</h1>
+                <p className={styles.p1}>Get more for your money with every purchase!</p>
+                <LabelWithArrow
+                    className={styles.labelWithArrow}
+                    onClick={anchorToNewIn}
 
+                    btLabel="Shop Now"
+
+                    bgColor1="#000000"
+                    horizontalSpacing="30"
+                    verticalSpacing="12"
+                    bgColor2="#ffffff"
+                    text="Buy Now"
+                />
+            </section>
+            <section ref={newInRef} className={styles.newIn}>
+                <FeaturedProductsSection
+                    className="alternateBackground"
+                    categorySlug="new-in"
+                    title="New In"
+                    description="Embrace a sustainable lifestyle with our newest drop-ins."
+                    productCount={4}
+                />
+            </section>
+            <section className={styles.categories}>section3</section>
+            <section className={styles.bestSellers}>section4</section>
+            <section className={styles.colorSelector}>section5</section>
+            <section className={styles.spotlight}>section5</section>
+            <section className={styles.review}>section5</section>
+            <div className={classNames('heroBanner', styles.div1)}>
+                <div>
+                    <div className="heroBannerSubtitle">ReClaim</div>
+                    <h1 className={styles.header1}>Shop The Top Brand Electronic.</h1>
+                    <CategoryLink categorySlug="all-products"></CategoryLink>
+                </div>
+                <LabelWithArrow className={styles.labelWithArrow}>Shop Collections</LabelWithArrow>
+            </div>
             <div className="textBannerSection">
                 <FadeIn className="textBanner" duration={1.8}>
                     <div className="textBannerSubtitle">Products of the highest standards</div>
@@ -33,12 +65,11 @@ export default function HomePage() {
                     </CategoryLink>
                 </FadeIn>
             </div>
-
             <div className="cardsSection">
                 <CategoryLink categorySlug="kitchen-essentials" className="linkCard">
                     <img
                         className="linkCardBackground"
-                        src="https://static.wixstatic.com/media/c837a6_c05a03f48fbd49e7b5046d1b18c930eb~mv2.jpg/v1/fill/w_547,h_730,q_90/c837a6_c05a03f48fbd49e7b5046d1b18c930eb~mv2.jpg"
+                        src="https://static.wixstatic.com/media/4da84e_f55bb718fbd0473381a349b611c5acd4~mv2.jpg/v1/fit/w_640,h_640/Headphones-01-Header_edited 1.jpg.jpg"
                         alt=""
                     />
                     <div className="linkCardTitle">Kitchen</div>
@@ -60,14 +91,6 @@ export default function HomePage() {
                     <div className="linkCardTitle">On the Go</div>
                 </CategoryLink>
             </div>
-
-            <FeaturedProductsSection
-                className="alternateBackground"
-                categorySlug="new-in"
-                title="New In"
-                description="Embrace a sustainable lifestyle with our newest drop-ins."
-                productCount={4}
-            />
 
             <BackgroundParallax
                 className="floatingCardBackground"
@@ -92,7 +115,8 @@ export default function HomePage() {
             </BackgroundParallax>
 
             <FeaturedProductsSection
-                categorySlug="best-sellers"
+                onClick={anchorToNewIn}
+                categorySlug="mobile"
                 title="Best Sellers"
                 description="When quality is eco-friendly. Explore our top picks."
                 productCount={4}
