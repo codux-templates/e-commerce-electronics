@@ -11,10 +11,8 @@
     height: 100vh;
     background-color: var(--primary4);
     padding-top: 180px;
-    overflow: hidden;
 }
 .newIn {
-    height: 100vh;
     background-color: #da3838;
 }
 .categories {
@@ -49,6 +47,7 @@
 }
 .tickerimage {
     width: 16vw;
+    height: 20vw;
 }
 .div2 {
     display: flex;

@@ -28,26 +28,26 @@ export default function HomePage() {
                     />
                 </div>
                 <div className={styles.div2}>
-                    <div className={styles.img_wrapper}>
-                        <img
-                            src="https://static.wixstatic.com/media/4da84e_3342ebb7900c44fba666eeff19e2fb8d~mv2.png/v1/fit/w_640,h_640/black speaker.png.png"
-                            alt=""
-                            className={styles.tickerimage}
-                        />
-                    </div>
-                    <div className={styles.img_wrapper}>
-                        <img
-                            src="https://static.wixstatic.com/media/4da84e_d0d1506a7d92440f9161c7809a3b76bf~mv2.png/v1/fit/w_640,h_640/phone1.png.png"
-                            alt=""
-                            className={styles.tickerimage}
-                        />
-                    </div>
-                    <div className={styles.img_wrapper}>
-                        <img
-                            src="https://static.wixstatic.com/media/4da84e_21c2b19128e249f68a929571d6499c30~mv2.png/v1/fit/w_640,h_640/watch.png.png"
-                            alt=""
-                        />
-                    </div>
+                    <img
+                        src="https://static.wixstatic.com/media/4da84e_3342ebb7900c44fba666eeff19e2fb8d~mv2.png/v1/fit/w_640,h_640/black speaker.png.png"
+                        alt=""
+                        className={styles.tickerimage}
+                    />
+                    <img
+                        src="https://static.wixstatic.com/media/4da84e_d0d1506a7d92440f9161c7809a3b76bf~mv2.png/v1/fit/w_640,h_640/phone1.png.png"
+                        alt=""
+                        className={styles.tickerimage}
+                    />
+                    <img
+                        src="https://static.wixstatic.com/media/4da84e_21c2b19128e249f68a929571d6499c30~mv2.png/v1/fit/w_640,h_640/watch.png.png"
+                        alt=""
+                        className={styles.tickerimage}
+                    />
+                    <img
+                        src="https://static.wixstatic.com/media/4da84e_21c2b19128e249f68a929571d6499c30~mv2.png/v1/fit/w_640,h_640/watch.png.png"
+                        alt=""
+                        className={styles.tickerimage}
+                    />
                 </div>
             </section>
             <section ref={newInRef} className={styles.newIn}>
