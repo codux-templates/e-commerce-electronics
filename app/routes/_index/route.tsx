@@ -32,19 +32,19 @@ export default function HomePage() {
                         <img
                             src="https://static.wixstatic.com/media/4da84e_3342ebb7900c44fba666eeff19e2fb8d~mv2.png/v1/fit/w_640,h_640/black speaker.png.png"
                             alt=""
-                            className={styles.speaker1}
+                            className={styles.tickerimage}
                         />
                     </div>
                     <div className={styles.img_wrapper}>
                         <img
-                            src="https://static.wixstatic.com/media/4da84e_fddf1ccc65a44130834017085555fc02~mv2.png/v1/fit/w_640,h_640/Rectangle 64.png.png"
+                            src="https://static.wixstatic.com/media/4da84e_d0d1506a7d92440f9161c7809a3b76bf~mv2.png/v1/fit/w_640,h_640/phone1.png.png"
                             alt=""
-                            className={styles.img1}
+                            className={styles.tickerimage}
                         />
                     </div>
                     <div className={styles.img_wrapper}>
                         <img
-                            src="https://static.wixstatic.com/media/4da84e_00e22775006d4cbc86a846a57f4f07ae~mv2.png/v1/fit/w_640,h_640/102.-SPACE-MOON-SMARTWATCH 1.png.png"
+                            src="https://static.wixstatic.com/media/4da84e_21c2b19128e249f68a929571d6499c30~mv2.png/v1/fit/w_640,h_640/watch.png.png"
                             alt=""
                         />
                     </div>
