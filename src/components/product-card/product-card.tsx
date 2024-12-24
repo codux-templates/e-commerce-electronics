@@ -55,11 +55,11 @@ export const ProductCard = ({
                 </div>
             </div>
             <LabelWithArrow
-                className={classNames(styles.labelWithArrow, styles.labelWithArrow)}
                 btLabel="Shop Now"
                 bgColor1="#000000"
                 horizontalSpacing="20"
                 verticalSpacing="12"
+                className={styles.labelWithArrow}
             />
         </div>
     );
