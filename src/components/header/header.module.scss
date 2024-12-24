@@ -6,20 +6,18 @@
 
 .topBar {
     padding: 10px 1.3vw;
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-    gap: 8px;
+    display: grid;
     border-bottom: 0px solid #000;
     font: var(--paragraph3);
     position: fixed;
     width: 100%;
-    top: auto;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .logo {
     font: var(--heading3);
     font-size: 26px;
+    justify-self: center;
 }
 
 .searchInput {
@@ -49,6 +47,7 @@
 .menu {
     font: var(--paragraph3);
     position: static;
+    margin: 1px;
 }
 
 .actions {
@@ -150,4 +149,5 @@
 .div4 {
     display: flex;
     column-gap: 10px;
+    justify-self: end;
 }

@@ -39,7 +39,6 @@ export const Header = ({ className }: HeaderProps) => {
                 <Link to="/" className={styles.logo}>
                     <NavigationMenu className={styles.menu} />
                 </Link>
-                <div></div>
                 <div className={styles.div4}>
                     <div className={styles.div3}>
                         <SearchInput
