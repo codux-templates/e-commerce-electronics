@@ -2,9 +2,10 @@
     display: flex;
     align-items: center;
     list-style-type: none;
-    padding: 0;
+    padding: 0px 50px;
     justify-content: center;
     flex-wrap: wrap;
+    column-gap: 26px;
 }
 
 .menuList.vertical {
@@ -13,11 +14,17 @@
 
 .menuItem {
     display: block;
-    padding: 14px 18px;
+    padding: 14px 0px;
     white-space: nowrap;
 }
 
 .menuItem:hover,
 .menuItem.active {
     text-decoration: underline;
+}
+.nav1 {
+    height: 66px;
+    display: flex;
+    border-radius: 100px;
+    background: var(--primary3);
 }

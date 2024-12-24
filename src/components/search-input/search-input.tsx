@@ -1,7 +1,8 @@
 import { Form } from '@remix-run/react';
 import { type FC, type FormEventHandler, useState } from 'react';
-import { CrossSmallIcon, SearchIcon } from '../icons';
+import { SearchIcon } from '../icons';
 import styles from './search-input.module.scss';
+import classNames from 'classnames';
 
 export interface SearchInputProps {
     className?: string;
@@ -22,19 +23,9 @@ export const SearchInput: FC<SearchInputProps> = ({
     };
 
     return (
-        <Form className={className} role="search" onSubmit={handleSubmit}>
+        <Form className={classNames(className, styles.form)} role="search" onSubmit={handleSubmit}>
             <label className={styles.label}>
                 <SearchIcon className={styles.searchIcon} />
-                <input
-                    className={styles.input}
-                    type="text"
-                    spellCheck="false"
-                    placeholder="Search"
-                    minLength={2}
-                    value={value}
-                    onChange={(event) => setValue(event.target.value)}
-                />
-                <CrossSmallIcon className={styles.clearIcon} onClick={() => setValue('')} />
             </label>
         </Form>
     );

@@ -1,7 +1,7 @@
 .label {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0px;
     font: var(--paragraph3);
 }
 
@@ -30,4 +30,7 @@
 
 .input:placeholder-shown + .clearIcon {
     display: none;
+}
+.form {
+    min-width: max content;
 }

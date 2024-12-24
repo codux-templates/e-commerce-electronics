@@ -9,6 +9,9 @@
 
 .hero {
     height: 100vh;
+    background-color: var(--primary4);
+    padding-top: 180px;
+    overflow: hidden;
 }
 .newIn {
     height: 100vh;
@@ -26,7 +29,39 @@
 }
 .header2 {
     font: var(--heading1);
+    width: 50vw;
+    line-height: 100%;
 }
 .p1 {
-    font: var(--heading4);
+    width: 26vw;
+    line-height: 110%;
+    font-size: 40px;
+    margin: 0px 0px 12px;
+}
+.test {
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-right: 3vw;
+    padding-left: 3vw;
+}
+.img1 {
+    width: 16vw;
+}
+.div2 {
+    display: flex;
+    align-items: end;
+}
+.div3 {
+    overflow: hidden;
+}
+.img_wrapper {
+    width: 16vw;
+    height: 20vw;
+    align-content: end;
+}
+.speaker1 {
+    width: 16vw;
 }

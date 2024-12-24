@@ -17,7 +17,6 @@ export const UserMenu = () => {
         return (
             <NavLink className={styles.root} to={'/login'}>
                 <Avatar imageSrc={undefined} />
-                Log In
             </NavLink>
         );
     }

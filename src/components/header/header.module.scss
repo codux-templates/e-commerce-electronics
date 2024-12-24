@@ -1,15 +1,20 @@
 .root {
     padding: 0 var(--pagePaddingHoriz);
+    padding-left: 0vw;
+    padding-right: 0vw;
 }
 
 .topBar {
-    padding: 10px 0;
+    padding: 10px 1.3vw;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
     gap: 8px;
-    border-bottom: 1px solid #000;
+    border-bottom: 0px solid #000;
     font: var(--paragraph3);
+    position: fixed;
+    width: 100%;
+    top: auto;
 }
 
 .logo {
@@ -18,15 +23,20 @@
 }
 
 .searchInput {
-    margin-left: 8px;
-    min-width: 4em;
+    margin-left: 0px;
     max-width: 14em;
 }
 
 .advertisingText {
-    display: inline-block;
-    margin-right: 16px;
+    display: flex;
+    margin-right: 0px;
     white-space: nowrap;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary2);
+    color: var(--primary1);
+    font: var(--paragraph2);
 }
 
 .navigation {
@@ -38,6 +48,7 @@
 
 .menu {
     font: var(--paragraph3);
+    position: static;
 }
 
 .actions {
@@ -45,13 +56,16 @@
     align-items: center;
     justify-content: flex-end;
     align-self: start;
-    height: 50px;
-    padding: 0 8px;
+    height: 66px;
+    padding: 0 25px;
     gap: 30px;
 
     & > * {
         flex: none;
     }
+    background: var(--primary3);
+    border: 0px solid black;
+    border-radius: 100px;
 }
 
 .cartButton {
@@ -106,4 +120,34 @@
         justify-content: center;
         font-size: 13px;
     }
+}
+.div1 {
+    width: 167px;
+    height: 66px;
+    background-color: var(--primary3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.03rem;
+    border-radius: 100px;
+    padding: 1px;
+    gap: 0px 8px;
+    font-size: 26px;
+    font-weight: 800;
+}
+.div2 {
+    padding: 2px 0px 0px;
+}
+.div3 {
+    height: 66px;
+    width: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary3);
+    border-radius: 100px;
+}
+.div4 {
+    display: flex;
+    column-gap: 10px;
 }

@@ -13,18 +13,42 @@ export default function HomePage() {
         newInRef.current.scrollIntoView({ behavior: 'smooth' });
     }
     return (
-        <div>
+        <div className={styles.div3}>
             <section className={styles.hero}>
-                <h1 className={styles.header2}>Shop The Top Brand Electronic.</h1>
-                <p className={styles.p1}>Get more for your money with every purchase!</p>
-                <LabelWithArrow
-                    className={styles.labelWithArrow}
-                    onClick={anchorToNewIn}
-                    btLabel="Shop Now"
-                    bgColor1="#000000"
-                    horizontalSpacing="20"
-                    verticalSpacing="12"
-                />
+                <div className={styles.flex}>
+                    <h1 className={styles.header2}>Shop The Top Brand Electronic.</h1>
+                    <p className={styles.p1}>Get more for your money with every purchase!</p>
+                    <LabelWithArrow
+                        className={styles.labelWithArrow}
+                        onClick={anchorToNewIn}
+                        btLabel="Shop Now"
+                        bgColor1="#000000"
+                        horizontalSpacing="20"
+                        verticalSpacing="12"
+                    />
+                </div>
+                <div className={styles.div2}>
+                    <div className={styles.img_wrapper}>
+                        <img
+                            src="https://static.wixstatic.com/media/4da84e_3342ebb7900c44fba666eeff19e2fb8d~mv2.png/v1/fit/w_640,h_640/black speaker.png.png"
+                            alt=""
+                            className={styles.speaker1}
+                        />
+                    </div>
+                    <div className={styles.img_wrapper}>
+                        <img
+                            src="https://static.wixstatic.com/media/4da84e_fddf1ccc65a44130834017085555fc02~mv2.png/v1/fit/w_640,h_640/Rectangle 64.png.png"
+                            alt=""
+                            className={styles.img1}
+                        />
+                    </div>
+                    <div className={styles.img_wrapper}>
+                        <img
+                            src="https://static.wixstatic.com/media/4da84e_00e22775006d4cbc86a846a57f4f07ae~mv2.png/v1/fit/w_640,h_640/102.-SPACE-MOON-SMARTWATCH 1.png.png"
+                            alt=""
+                        />
+                    </div>
+                </div>
             </section>
             <section ref={newInRef} className={styles.newIn}>
                 <FeaturedProductsSection
