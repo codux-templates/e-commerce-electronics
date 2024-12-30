@@ -6,6 +6,8 @@ import { BackgroundParallax, FadeIn, FloatIn } from '~/src/components/visual-eff
 import { useRef } from 'react';
 import styles from './route.module.scss';
 import classNames from 'classnames';
+import featuredProductsSectionStyles from '../../../src/components/featured-products-section/featured-products-section.module.scss';
+import rootStyles from '../../root.module.scss';
 
 export default function HomePage() {
     const newInRef = useRef(null);
@@ -44,13 +46,28 @@ export default function HomePage() {
                         className={styles.tickerimage}
                     />
                     <img
-                        src="https://static.wixstatic.com/media/4da84e_21c2b19128e249f68a929571d6499c30~mv2.png/v1/fit/w_640,h_640/watch.png.png"
+                        src="https://static.wixstatic.com/media/4da84e_cd4fe732d24a436db0d923bf11093937~mv2.png/v1/fit/w_640,h_640/white speaker.png.png"
+                        alt=""
+                        className={styles.tickerimage}
+                    />
+                    <img
+                        src="https://static.wixstatic.com/media/4da84e_4512c1497c544f0f8317030daabccb54~mv2.png/v1/fit/w_640,h_640/headphones.png.png"
+                        alt=""
+                        className={styles.tickerimage}
+                    />
+                    <img
+                        src="https://static.wixstatic.com/media/4da84e_35c9e48301eb49c5bc4abf957c6dc06b~mv2.png/v1/fit/w_640,h_640/phone2.png.png"
+                        alt=""
+                        className={styles.tickerimage}
+                    />
+                    <img
+                        src="https://static.wixstatic.com/media/4da84e_dc8ccbf41a6346199e4c72f2e7ce7be3~mv2.png/v1/fit/w_640,h_640/headphones2.png.png"
                         alt=""
                         className={styles.tickerimage}
                     />
                 </div>
             </section>
-            <section ref={newInRef} className={styles.newIn}>
+            <section ref={newInRef}>
                 <FeaturedProductsSection
                     className="alternateBackground"
                     categorySlug="new-in"
@@ -59,35 +76,33 @@ export default function HomePage() {
                     productCount={4}
                 />
             </section>
-            <section className={styles.categories}>section3</section>
-            <section className={styles.bestSellers}>section4</section>
-            <section className={styles.colorSelector}>section5</section>
-            <section className={styles.spotlight}>section5</section>
-            <section className={styles.review}>section5</section>
-            <div className={classNames('heroBanner', styles.div1)}>
-                <div>
-                    <div className="heroBannerSubtitle">ReClaim</div>
-                    <h1 className={styles.header1}>Shop The Top Brand Electronic.</h1>
-                    <CategoryLink categorySlug="all-products"></CategoryLink>
-                </div>
-                <LabelWithArrow className={styles.labelWithArrow}>Shop Collections</LabelWithArrow>
-            </div>
-            <div className="textBannerSection">
+            <div
+                className={classNames(
+                    'textBannerSection',
+                    styles['section-paddings'],
+                    styles['no-padding-bottom'],
+                )}
+            >
                 <FadeIn className="textBanner" duration={1.8}>
-                    <div className="textBannerSubtitle">Products of the highest standards</div>
-                    <div className="textBannerTitle">
-                        Essential home collections for sustainable living
+                    <div
+                        className={classNames(
+                            featuredProductsSectionStyles.headerTitle,
+                            styles['small-spacing'],
+                        )}
+                    >
+                        Shop by Category.
                     </div>
-                    <CategoryLink categorySlug="all-products">
-                        <LabelWithArrow>Shop Collections</LabelWithArrow>
-                    </CategoryLink>
+                    <CategoryLink categorySlug="all-products"></CategoryLink>
                 </FadeIn>
             </div>
             <div className="cardsSection">
-                <CategoryLink categorySlug="kitchen-essentials" className="linkCard">
+                <CategoryLink
+                    categorySlug="kitchen-essentials"
+                    className={classNames('linkCard', styles.categoryLink)}
+                >
                     <img
                         className="linkCardBackground"
-                        src="https://static.wixstatic.com/media/c837a6_c05a03f48fbd49e7b5046d1b18c930eb~mv2.jpg/v1/fill/w_547,h_730,q_90/c837a6_c05a03f48fbd49e7b5046d1b18c930eb~mv2.jpg"
+                        src="https://static.wixstatic.com/media/4da84e_0ed0444af4014f8fafb9d2a290998802~mv2.jpg/v1/fit/w_640,h_640/Rectangle 226.jpg.jpg"
                         alt=""
                     />
                     <div className="linkCardTitle">Kitchen</div>
@@ -95,7 +110,7 @@ export default function HomePage() {
                 <CategoryLink categorySlug="bath" className="linkCard">
                     <img
                         className="linkCardBackground"
-                        src="https://static.wixstatic.com/media/c837a6_269f35d6ccff4321b7ed1e65c2835c61~mv2.jpg/v1/fill/w_548,h_730,q_90/c837a6_269f35d6ccff4321b7ed1e65c2835c61~mv2.jpg"
+                        src="https://static.wixstatic.com/media/4da84e_081e5025523347babb57a7ab72c5fae8~mv2.jpg/v1/fit/w_640,h_640/Rectangle 227.jpg.jpg"
                         alt=""
                     />
                     <div className="linkCardTitle">Bath</div>
