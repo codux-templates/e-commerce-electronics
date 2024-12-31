@@ -2,7 +2,7 @@ import type { MetaFunction } from '@remix-run/react';
 import { CategoryLink } from '~/src/components/category-link/category-link';
 import { FeaturedProductsSection } from '~/src/components/featured-products-section/featured-products-section';
 import { LabelWithArrow } from '~/src/components/label-with-arrow/label-with-arrow';
-import { BackgroundParallax, FadeIn, FloatIn } from '~/src/components/visual-effects';
+import { FadeIn } from '~/src/components/visual-effects';
 import { useRef } from 'react';
 import styles from './route.module.scss';
 import classNames from 'classnames';
@@ -96,16 +96,48 @@ export default function HomePage() {
                 </FadeIn>
             </div>
             <div className="cardsSection">
-                <CategoryLink
-                    categorySlug="kitchen-essentials"
-                    className={classNames('linkCard', styles.categoryLink)}
-                >
+                <CategoryLink categorySlug="bath" className="linkCard">
                     <img
                         className="linkCardBackground"
                         src="https://static.wixstatic.com/media/4da84e_0ed0444af4014f8fafb9d2a290998802~mv2.jpg/v1/fit/w_640,h_640/Rectangle 226.jpg.jpg"
                         alt=""
                     />
-                    <div className="linkCardTitle">Kitchen</div>
+                    <div className={classNames('linkCardTitle', styles.StackH3p2)}>
+                        Speakers &amp; Headphones.
+                        <p className={styles.p3}>
+                            I&apos;m a paragraph. Click here to add your own text and edit me.
+                        </p>
+                    </div>
+                </CategoryLink>
+                <CategoryLink categorySlug="bath" className="linkCard">
+                    <img
+                        className="linkCardBackground"
+                        src="https://static.wixstatic.com/media/4da84e_31e801eb1aa54e9ebb63903f03fe819c~mv2.jpg/v1/fit/w_640,h_640/Rectangle 224.jpg.jpg"
+                        alt=""
+                    />
+                    <div
+                        className={classNames('linkCardTitle', styles.StackH3p2, styles.blacktext)}
+                    >
+                        Speakers &amp; Headphones.
+                        <p className={styles.p3}>
+                            I&apos;m a paragraph. Click here to add your own text and edit me.
+                        </p>
+                    </div>
+                </CategoryLink>
+                <CategoryLink categorySlug="bath" className="linkCard">
+                    <img
+                        className="linkCardBackground"
+                        src="https://static.wixstatic.com/media/4da84e_31e801eb1aa54e9ebb63903f03fe819c~mv2.jpg/v1/fit/w_640,h_640/Rectangle 224.jpg.jpg"
+                        alt=""
+                    />
+                    <div
+                        className={classNames('linkCardTitle', styles.StackH3p2, styles.blacktext)}
+                    >
+                        Wearables
+                        <p className={styles.p3}>
+                            I&apos;m a paragraph. Click here to add your own text and edit me.
+                        </p>
+                    </div>
                 </CategoryLink>
                 <CategoryLink categorySlug="bath" className="linkCard">
                     <img
@@ -113,46 +145,37 @@ export default function HomePage() {
                         src="https://static.wixstatic.com/media/4da84e_081e5025523347babb57a7ab72c5fae8~mv2.jpg/v1/fit/w_640,h_640/Rectangle 227.jpg.jpg"
                         alt=""
                     />
-                    <div className="linkCardTitle">Bath</div>
-                </CategoryLink>
-                <CategoryLink categorySlug="on-the-go" className="linkCard">
-                    <img
-                        className="linkCardBackground"
-                        src="https://static.wixstatic.com/media/c837a6_d38d8d08196d477ba49efff880d5b918~mv2.jpg/v1/fill/w_547,h_730,q_90/c837a6_d38d8d08196d477ba49efff880d5b918~mv2.jpg"
-                        alt=""
-                    />
-                    <div className="linkCardTitle">On the Go</div>
+                    <div className={classNames('linkCardTitle', styles.StackH3p2)}>
+                        Mobile Devices.
+                        <p className={styles.p3}>
+                            I&apos;m a paragraph. Click here to add your own text and edit me.
+                        </p>
+                    </div>
                 </CategoryLink>
             </div>
-
-            <BackgroundParallax
-                className="floatingCardBackground"
-                backgroundImageUrl="https://static.wixstatic.com/media/c837a6_cae4dbe5a7ee4637b7d55d9bd5bd755d~mv2.png/v1/fill/w_1178,h_974,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/c837a6_cae4dbe5a7ee4637b7d55d9bd5bd755d~mv2.png"
-                parallaxStrength={0.75}
-            >
-                <FloatIn direction="up" duration={1.2} distance={120}>
-                    <div className="floatingCard">
-                        <div className="floatingCardHeader">Happy Holidays</div>
-                        <div className="floatingCardContent">
-                            <h2 className="floatingCardTitle">The holidays best sellers</h2>
-                            <div className="floatingCardDescription">
-                                Home essentials for
-                                <br /> sustainable living
-                            </div>
-                        </div>
-                        <CategoryLink categorySlug="all-products">
-                            <LabelWithArrow>Buy a gift</LabelWithArrow>
-                        </CategoryLink>
-                    </div>
-                </FloatIn>
-            </BackgroundParallax>
-
-            <FeaturedProductsSection
-                categorySlug="mobile"
-                title="Best Sellers"
-                description="When quality is eco-friendly. Explore our top picks."
-                productCount={4}
-            />
+            <div className={classNames(styles.compareColors, styles['section-paddings'])}>
+                <div>
+                    <h1 className={classNames(featuredProductsSectionStyles.H2p1, styles.header4)}>
+                        Vibrant OveWatch Choices.
+                        <p className={styles.p4}>
+                            Smart Style, Seamless Living - Wearable Designed to Simplify Your Day
+                        </p>
+                    </h1>
+                    <LabelWithArrow
+                        className={classNames(styles.labelWithArrow, styles.labelWithArrow)}
+                        onClick={anchorToNewIn}
+                        btLabel="Shop Now"
+                        bgColor1="#000000"
+                        horizontalSpacing="20"
+                        verticalSpacing="10"
+                    />
+                </div>
+                <img
+                    src="https://static.wixstatic.com/media/11062b_25e218a68cae48e98a21198d1280a6bd~mv2.jpg/v1/fill/w_600,h_399,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_25e218a68cae48e98a21198d1280a6bd~mv2.jpg"
+                    alt=""
+                    className={styles.img1}
+                />
+            </div>
         </div>
     );
 }

@@ -1,12 +1,12 @@
 .root {
     margin: 0 calc(-1 * var(--pagePaddingHoriz));
-    padding: 75px var(--pagePaddingHoriz);
+    padding: 75px var(--pagePaddingHoriz) 0px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background-color: var(--page-background-color);
-    min-height: 80vh;
+    min-height: auto;
 }
 
 .header {
@@ -22,18 +22,29 @@
 }
 
 .headerTitle {
-    font: var(--heading3);
-    font-size: 3vw;
     text-align: center;
     letter-spacing: 0.04rem;
+    font-weight: 800;
+    line-height: 0.94;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-stretch: normal;
+    font: var(--heading2);
 }
 
 .headerDescription {
-    font: var(--paragraph1);
-    font-size: 20px;
     text-wrap: balance;
-    max-width: 300px;
+    max-width: 20vw;
     text-align: center;
+    margin-bottom: var(--small-spacing);
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-stretch: normal;
+    font: var(--paragraph1);
 }
 
 .products {
@@ -80,4 +91,9 @@
     }
 }
 .productLink {
+}
+.H2p1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

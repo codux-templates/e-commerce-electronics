@@ -5,6 +5,7 @@ import { FadeIn, Reveal } from '~/src/components/visual-effects';
 import { useCategoryDetails } from '~/src/wix/categories';
 import { getProductImageUrl, useProducts } from '~/src/wix/products';
 import styles from './featured-products-section.module.scss';
+import routeStyles from '../../../app/routes/_index/route.module.scss';
 
 interface FeaturedProductsSectionProps {
     categorySlug: string;
@@ -21,10 +22,15 @@ export const FeaturedProductsSection = (props: FeaturedProductsSectionProps) => 
 
     return (
         <div className={classNames(styles.root, className)}>
-            <FadeIn className={styles.header} duration={1.8}>
-                <h3 className={styles.headerTitle}>{'New In.'}</h3>
-                <div className={styles.headerDescription}>
-                    {description ?? category?.description}
+            <FadeIn
+                className={classNames(styles.header, routeStyles['small-spacing'])}
+                duration={1.8}
+            >
+                <div className={styles.H2p1}>
+                    <h3 className={styles.headerTitle}>{'New In.'}</h3>
+                    <div className={styles.headerDescription}>
+                        {description ?? category?.description}
+                    </div>
                 </div>
             </FadeIn>
             <Reveal className={styles.products} direction="down" duration={1.4}>
