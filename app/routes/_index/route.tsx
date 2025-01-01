@@ -154,7 +154,7 @@ export default function HomePage() {
                 </CategoryLink>
             </div>
             <div className={classNames(styles.compareColors, styles['section-paddings'])}>
-                <div>
+                <div className={styles.centerTitlePButton}>
                     <h1 className={classNames(featuredProductsSectionStyles.H2p1, styles.header4)}>
                         Vibrant OveWatch Choices.
                         <p className={styles.p4}>
@@ -171,7 +171,7 @@ export default function HomePage() {
                     />
                 </div>
                 <img
-                    src="https://static.wixstatic.com/media/11062b_25e218a68cae48e98a21198d1280a6bd~mv2.jpg/v1/fill/w_600,h_399,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_25e218a68cae48e98a21198d1280a6bd~mv2.jpg"
+                    src="https://static.wixstatic.com/media/4da84e_08e819d60d274bceae4008138113beec~mv2.jpg/v1/fit/w_640,h_640/10.-SPACE-MOON-SMARTWATCH-1.jpg.jpg"
                     alt=""
                     className={styles.img1}
                 />
