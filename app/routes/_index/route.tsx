@@ -8,6 +8,7 @@ import styles from './route.module.scss';
 import classNames from 'classnames';
 import featuredProductsSectionStyles from '../../../src/components/featured-products-section/featured-products-section.module.scss';
 import rootStyles from '../../root.module.scss';
+import { ProductCard } from '../../../src/components/product-card/product-card';
 
 export default function HomePage() {
     const newInRef = useRef(null);
@@ -170,11 +171,107 @@ export default function HomePage() {
                         verticalSpacing="10"
                     />
                 </div>
-                <img
-                    src="https://static.wixstatic.com/media/4da84e_08e819d60d274bceae4008138113beec~mv2.jpg/v1/fit/w_640,h_640/10.-SPACE-MOON-SMARTWATCH-1.jpg.jpg"
-                    alt=""
-                    className={styles.img1}
-                />
+                <div className={styles.div8}>
+                    <img
+                        src="https://static.wixstatic.com/media/4da84e_08e819d60d274bceae4008138113beec~mv2.jpg/v1/fit/w_640,h_640/10.-SPACE-MOON-SMARTWATCH-1.jpg.jpg"
+                        alt=""
+                        className={styles.img1}
+                    />
+                    <div className={styles.div111}>
+                        <div className={styles.div10}>
+                            <p className={classNames(styles.p5, styles.bold)}>Metallic Grey</p>
+                            <p className={styles.p6}>10.3&quot;, 32GB</p>
+                            <p className={styles.p7}>$800 </p>
+                        </div>
+                        <img
+                            src="https://static.wixstatic.com/media/4da84e_dfa5c33934814374bc36f2a70d66eea5~mv2.jpg/v1/fit/w_640,h_640/10.jpg"
+                            alt=""
+                            className={classNames(styles.img1, styles.crop)}
+                        />
+                    </div>
+                </div>
+            </div>
+            <div className={classNames(styles['section-paddings'], styles['no-padding-bottom'])}>
+                <div className={styles.div11}>
+                    <h1 className={classNames(featuredProductsSectionStyles.H2p1, styles.header4)}>
+                        Vibrant OveWatch Choices.
+                        <p className={styles.p1left}>
+                            Smart Style, Seamless Living - Wearable Designed to Simplify Your Day
+                        </p>
+                    </h1>
+                </div>
+                <div className={styles.imgSpotlightImg}>
+                    <img
+                        src="https://static.wixstatic.com/media/4da84e_f55bb718fbd0473381a349b611c5acd4~mv2.jpg/v1/fit/w_640,h_640/Headphones-01-Header_edited 1.jpg.jpg"
+                        alt=""
+                        className={styles.img1}
+                    />
+                    <ProductCard />
+                    <div className={styles.div111}>
+                        <div className={styles.div10}>
+                            <p className={classNames(styles.p5, styles.bold)}>Metallic Grey</p>
+                            <p className={styles.p6}>10.3&quot;, 32GB</p>
+                            <p className={styles.p7}>$800 </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                className={classNames(
+                    styles['section-paddings'],
+                    styles['no-padding-bottom'],
+                    styles['no-padding-top'],
+                )}
+            >
+                <div className={styles.div11}></div>
+                <div className={styles.reviewsdiv}>
+                    <div className={classNames(styles.onereview, styles.first)}>
+                        <img
+                            src="https://static.wixstatic.com/media/4da84e_f55bb718fbd0473381a349b611c5acd4~mv2.jpg/v1/fit/w_640,h_640/Headphones-01-Header_edited 1.jpg.jpg"
+                            alt=""
+                            className={styles.reviewsImg}
+                        />
+                        <div className={styles.div14}>
+                            <p className={styles.p8}>
+                                &quot;Found the perfect speaker in minutes!&quot;
+                            </p>
+                            <p className={styles.p9}>John S.</p>
+                        </div>
+                    </div>
+                    <div className={classNames(styles.onereview, styles.second)}>
+                        <img
+                            src="https://static.wixstatic.com/media/4da84e_f55bb718fbd0473381a349b611c5acd4~mv2.jpg/v1/fit/w_640,h_640/Headphones-01-Header_edited 1.jpg.jpg"
+                            alt=""
+                            className={styles.reviewsImg}
+                        />
+                        <div className={styles.div14}>
+                            <p className={styles.p8}>
+                                &quot;Found the perfect speaker in minutes!&quot;
+                            </p>
+                            <p className={styles.p9}>John S.</p>
+                        </div>
+                    </div>
+                    <div className={classNames(styles.onereview, styles.third)}>
+                        <img
+                            src="https://static.wixstatic.com/media/4da84e_f55bb718fbd0473381a349b611c5acd4~mv2.jpg/v1/fit/w_640,h_640/Headphones-01-Header_edited 1.jpg.jpg"
+                            alt=""
+                            className={styles.reviewsImg}
+                        />
+                        <div className={styles.div14}>
+                            <p className={styles.p8}>
+                                &quot;Found the perfect speaker in minutes!&quot;
+                            </p>
+                            <p className={styles.p9}>John S.</p>
+                        </div>
+                    </div>
+                    <div className={styles.div9}>
+                        <div className={styles.div12}>
+                            <div className={styles.div13}>
+                                <h2 className={styles.header5}>Reviews.</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
