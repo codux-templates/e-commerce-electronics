@@ -17,12 +17,24 @@ export const Footer = ({ className }: FooterProps) => {
 
     return (
         <footer className={classNames(styles.root, className)}>
+            <FadeIn className={styles.bottomBar} duration={1.8}>
+                <div className={styles.div1}>
+                    <Link to="/" className={styles.logo}>
+                        Sparke
+                    </Link>
+                    <p className={styles.p1}>
+                        This is the space to introduce visitors to the business or brand. Briefly
+                        explain who&apos;s behind it, what it does and what makes it unique. Share
+                        its core values and what this site has to offer.
+                    </p>
+                </div>
+            </FadeIn>
             <FadeIn className={styles.navigation} duration={1.8}>
                 <nav>
                     <ul className={styles.navList}>
                         <li>
                             <CategoryLink categorySlug="all-products" className={navItemStyle}>
-                                Shop All
+                                Shop
                             </CategoryLink>
                         </li>
                         <li>
@@ -111,13 +123,8 @@ export const Footer = ({ className }: FooterProps) => {
                         </Link>
                     </li>
                 </ul>
-            </FadeIn>
-            <FadeIn className={styles.bottomBar} duration={1.8}>
-                <Link to="/" className={styles.logo}>
-                    ReClaim
-                </Link>
                 <div className={styles.copyright}>
-                    <span>© 2024 by ReClaim. Made with </span>
+                    <span className={styles.span1}>© 2028 by Sparke. Proudly created with </span>
                     <Link to="https://www.codux.com/" className={styles.coduxLink}>
                         Codux™
                     </Link>

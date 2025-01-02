@@ -1,6 +1,10 @@
 .root {
-    padding: 30px var(--pagePaddingHoriz);
-    background: var(--primary3);
+    background: var(--text-color);
+    padding-top: var(--side-padding-desktop);
+    padding-bottom: var(--side-padding-desktop);
+    padding-left: var(--side-padding-desktop);
+    padding-right: var(--side-padding-desktop);
+    display: grid;
 }
 
 .navigation {
@@ -21,6 +25,8 @@
     font-size: 16px;
     line-height: 2.2;
     white-space: nowrap;
+    font: var(--paragraph2);
+    color: var(--page-background-color);
 }
 
 .navItem.active {
@@ -35,9 +41,16 @@
 }
 
 .logo {
-    font: var(--heading1);
     line-height: 1;
-    font-size: min(13vw, 100px);
+    font-weight: 800;
+    line-height: 1;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-stretch: normal;
+    font-size: 40px;
+    letter-spacing: 0.07rem;
+    color: var(--page-background-color);
 }
 
 .copyright {
@@ -47,6 +60,7 @@
 
 .coduxLink {
     text-decoration: underline;
+    color: var(--page-background-color);
 }
 
 @media (max-width: 768px) {
@@ -59,4 +73,19 @@
     .navigation {
         gap: 20px 100px;
     }
+}
+.span1 {
+    color: var(--page-background-color);
+}
+.p1 {
+    font-weight: 400;
+    max-width: 34vw;
+    color: var(--page-background-color);
+    font-size: 40px;
+    line-height: 100%;
+}
+.div1 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }

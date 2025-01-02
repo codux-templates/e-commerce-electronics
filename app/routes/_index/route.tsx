@@ -171,24 +171,27 @@ export default function HomePage() {
                         verticalSpacing="10"
                     />
                 </div>
-                <div className={styles.div8}>
+                <div className={styles.div111}>
+                    <div className={styles.spec}>
+                        <p className={classNames(styles.p5, styles.bold)}>Metallic Grey</p>
+                        <p className={styles.p6}>10.3&quot;, 32GB</p>
+                        <p className={styles.p7}>$800 </p>
+                    </div>
+                    <div className={classNames(styles.spec, styles.right)}>
+                        <p className={classNames(styles.p5, styles.bold)}>Metallic Grey</p>
+                        <p className={styles.p6}>10.3&quot;, 32GB</p>
+                        <p className={styles.p7}>$800 </p>
+                    </div>
                     <img
                         src="https://static.wixstatic.com/media/4da84e_08e819d60d274bceae4008138113beec~mv2.jpg/v1/fit/w_640,h_640/10.-SPACE-MOON-SMARTWATCH-1.jpg.jpg"
                         alt=""
-                        className={styles.img1}
+                        className={styles.colorchangeimg}
                     />
-                    <div className={styles.div111}>
-                        <div className={styles.div10}>
-                            <p className={classNames(styles.p5, styles.bold)}>Metallic Grey</p>
-                            <p className={styles.p6}>10.3&quot;, 32GB</p>
-                            <p className={styles.p7}>$800 </p>
-                        </div>
-                        <img
-                            src="https://static.wixstatic.com/media/4da84e_dfa5c33934814374bc36f2a70d66eea5~mv2.jpg/v1/fit/w_640,h_640/10.jpg"
-                            alt=""
-                            className={classNames(styles.img1, styles.crop)}
-                        />
-                    </div>
+                    <img
+                        src="https://static.wixstatic.com/media/4da84e_dfa5c33934814374bc36f2a70d66eea5~mv2.jpg/v1/fit/w_640,h_640/10.jpg"
+                        alt=""
+                        className={classNames(styles.crop, styles.fullwidthimg)}
+                    />
                 </div>
             </div>
             <div className={classNames(styles['section-paddings'], styles['no-padding-bottom'])}>
@@ -207,13 +210,6 @@ export default function HomePage() {
                         className={styles.img1}
                     />
                     <ProductCard />
-                    <div className={styles.div111}>
-                        <div className={styles.div10}>
-                            <p className={classNames(styles.p5, styles.bold)}>Metallic Grey</p>
-                            <p className={styles.p6}>10.3&quot;, 32GB</p>
-                            <p className={styles.p7}>$800 </p>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div
@@ -227,7 +223,7 @@ export default function HomePage() {
                 <div className={styles.reviewsdiv}>
                     <div className={classNames(styles.onereview, styles.first)}>
                         <img
-                            src="https://static.wixstatic.com/media/4da84e_f55bb718fbd0473381a349b611c5acd4~mv2.jpg/v1/fit/w_640,h_640/Headphones-01-Header_edited 1.jpg.jpg"
+                            src="https://static.wixstatic.com/media/4da84e_bf5c3bab4e064f15ac18fd5a3acef78e~mv2.jpg/v1/fit/w_640,h_640/gettyimages-2060388070-170667a.jpg.jpg"
                             alt=""
                             className={styles.reviewsImg}
                         />

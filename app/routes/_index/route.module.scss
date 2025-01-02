@@ -123,8 +123,7 @@
     font: var(--heading2);
 }
 .img1 {
-    width: 66.5vw;
-    border: 0px solid black;
+    width: 100%;
     border-radius: 16px;
     height: 36vw;
     grid-row: 1 / 2;
@@ -132,6 +131,8 @@
     object-fit: cover;
 }
 .compareColors {
+    display: flex;
+    flex-direction: column;
 }
 .p4 {
     font: var(--paragraph1);
@@ -154,15 +155,15 @@
 }
 .div8 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1f;
+    grid-template-columns: 1fr;
+    position: relative;
 }
 .div111 {
-    width: 90%;
+    width: 100%;
     object-fit: fill;
     grid-row: 1 / 3;
     grid-column: 1 / 2;
-    position: sticky;
-    display: flex;
+    position: relative;
     height: auto;
     align-items: start;
     align-content: start;
@@ -187,17 +188,14 @@
 .bold {
     font-weight: 800;
 }
-.div10 {
+.spec {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    align-content: start;
-    justify-content: end;
     width: max-content;
     position: absolute;
     z-index: 999;
-    top: 4577px;
-    left: 78px;
+    bottom: 20px;
+    left: 20px;
 }
 .imgSpotlightImg {
     display: grid;
@@ -212,6 +210,7 @@
 }
 .div11 {
     margin-bottom: var(--small-spacing);
+    display: flex;
 }
 .reviewsdiv {
     display: grid;
@@ -281,10 +280,23 @@
 .third {
     grid-row: 3 / 4;
     grid-column: 2 / 4;
+    padding-bottom: var(--small-spacing);
 }
 .div9 {
     height: 100vh;
     grid-row: 1 / 3;
     grid-column: 1 / 2;
+    top: 0px;
     position: sticky;
+}
+.fullwidthimg {
+    width: 100%;
+}
+.colorchangeimg {
+    width: 100%;
+    border-radius: 16px;
+    position: absolute;
+}
+.right {
+    right: 20px;
 }
