@@ -5,6 +5,7 @@
     padding-left: var(--side-padding-desktop);
     padding-right: var(--side-padding-desktop);
     display: grid;
+    gap: var(--BigSpacingDesktop);
 }
 
 .navigation {
@@ -88,4 +89,59 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+}
+.menuTitleFooter {
+    color: var(--page-background-color);
+    font-weight: 800;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.ListFooter {
+    display: flex;
+    flex-direction: column;
+}
+.li1 {
+    margin-bottom: 20px;
+}
+.p2 {
+    font: var(--paragraph2);
+    color: var(--page-background-color);
+    font-weight: 400;
+}
+.div2 {
+    display: flex;
+    gap: 0px 10.4vw;
+    align-items: start;
+    justify-content: start;
+}
+.nav1 {
+    display: flex;
+    justify-content: start;
+    align-content: start;
+    width: auto;
+}
+.p3 {
+    color: var(--page-background-color);
+    font: var(--paragraph2);
+    font-weight: 800;
+}
+.div3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 0px;
+}
+.div4 {
+    display: flex;
+    width: 100%;
+    align-content: space-between;
+    justify-content: space-between;
+}
+.fadeIn {
+    width: 100%;
+}
+.div5 {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--small-spacing);
 }

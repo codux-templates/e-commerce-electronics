@@ -177,7 +177,7 @@ export default function HomePage() {
                         <p className={styles.p6}>10.3&quot;, 32GB</p>
                         <p className={styles.p7}>$800 </p>
                     </div>
-                    <div className={classNames(styles.spec, styles.right)}>
+                    <div className={styles['spec-right']}>
                         <p className={classNames(styles.p5, styles.bold)}>Metallic Grey</p>
                         <p className={styles.p6}>10.3&quot;, 32GB</p>
                         <p className={styles.p7}>$800 </p>
@@ -196,7 +196,7 @@ export default function HomePage() {
             </div>
             <div className={classNames(styles['section-paddings'], styles['no-padding-bottom'])}>
                 <div className={styles.div11}>
-                    <h1 className={classNames(featuredProductsSectionStyles.H2p1, styles.header4)}>
+                    <h1 className={styles.header4}>
                         Vibrant OveWatch Choices.
                         <p className={styles.p1left}>
                             Smart Style, Seamless Living - Wearable Designed to Simplify Your Day
@@ -209,7 +209,7 @@ export default function HomePage() {
                         alt=""
                         className={styles.img1}
                     />
-                    <ProductCard />
+                    <ProductCard name="Ove Headphones" />
                 </div>
             </div>
             <div
@@ -262,9 +262,7 @@ export default function HomePage() {
                     </div>
                     <div className={styles.div9}>
                         <div className={styles.div12}>
-                            <div className={styles.div13}>
-                                <h2 className={styles.header5}>Reviews.</h2>
-                            </div>
+                            <h2 className={styles.header5}>Reviews.</h2>
                         </div>
                     </div>
                 </div>
