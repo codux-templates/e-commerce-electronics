@@ -1,7 +1,6 @@
 import { products } from '@wix/stores';
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { getClickableElementAttributes } from '~/src/wix/utils';
 import { ImagePlaceholderIcon } from '../icons';
 
 import styles from './product-images.module.scss';
@@ -24,7 +23,7 @@ export const ProductImages = ({ media }: ProductImagesProps) => {
     const imageItems = media?.items?.filter((item) => item.image !== undefined);
 
     return (
-        <div>
+        <div className={styles.div1}>
             <div className={styles.mainImageWrapper}>
                 {selectedImage && selectedImage.image ? (
                     <img
@@ -37,25 +36,7 @@ export const ProductImages = ({ media }: ProductImagesProps) => {
                 )}
             </div>
 
-            {imageItems && imageItems.length > 0 && (
-                <div className={styles.thumbnails}>
-                    {imageItems.map((item) => (
-                        <div
-                            key={item._id}
-                            className={classNames(styles.thumbnail, {
-                                [styles.selected]: selectedImage && selectedImage._id === item._id,
-                            })}
-                            {...getClickableElementAttributes(() => setSelectedImage(item))}
-                        >
-                            <img
-                                className={styles.thumbnailImage}
-                                src={item.image!.url}
-                                alt={item.image!.altText ?? ''}
-                            />
-                        </div>
-                    ))}
-                </div>
-            )}
+            {imageItems && imageItems.length > 0 && <div className={styles.thumbnails}></div>}
         </div>
     );
 };

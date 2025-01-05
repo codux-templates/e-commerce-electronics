@@ -1,17 +1,24 @@
 .page {
     padding-bottom: 50px;
+    background: var(--primary4);
 }
 
 .content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 58vw 1fr;
     column-gap: 32px;
     margin-top: 36px;
 }
 
 .productName {
+    font-weight: 800;
+    line-height: 1.05;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-stretch: normal;
     font: var(--heading3);
-    font-size: 34px;
+    margin-top: var(--XlargeSpacingDesktop);
 }
 
 .sku {
@@ -22,9 +29,10 @@
 }
 
 .price {
-    margin-top: 16px;
-    font: var(--heading5);
+    margin-top: 8px;
+    font: var(--paragraph1);
     font-size: 21px;
+    font-weight: 800;
 }
 
 .description {
@@ -90,4 +98,46 @@
     .addToCartButton {
         width: 100%;
     }
+}
+.p1 {
+    width: max-content;
+    font: var(--paragraph3);
+    margin-right: 8px;
+}
+.priceFrom {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+.p2 {
+    font: var(--paragraph3);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.optionsSize {
+    border-top-left-radius: var(--RoundCorners);
+    border-top-right-radius: var(--RoundCorners);
+    border-bottom-left-radius: var(--RoundCorners);
+    border-bottom-right-radius: var(--RoundCorners);
+    width: 6vw;
+    height: 6vw;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.p3 {
+    font: var(--paragraph3);
+    width: max-content;
+}
+.p4 {
+    font: var(--paragraph1);
+    font-weight: 800;
+}
+.SizeOptions {
+    display: flex;
+    gap: 12px;
 }

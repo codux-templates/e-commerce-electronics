@@ -5,6 +5,7 @@ import { Select, SelectItem } from '~/src/components/select/select';
 import { ErrorIcon } from '../icons';
 
 import styles from './product-option.module.scss';
+import classNames from 'classnames';
 
 export interface ProductOptionProps {
     option: products.ProductOption;
@@ -31,7 +32,7 @@ export const ProductOption = ({ option, selectedChoice, error, onChange }: Produ
 
     return (
         <div className={styles.root}>
-            <div className="paragraph2">
+            <div className={classNames('paragraph2', styles.div1)}>
                 {name}
                 {selectedChoice && `: ${selectedChoice.description}`}
             </div>

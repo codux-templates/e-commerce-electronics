@@ -9,7 +9,6 @@ import { MinusIcon, PlusIcon } from '~/src/components/icons';
 import { ProductImages } from '~/src/components/product-images/product-images';
 import { ProductOption } from '~/src/components/product-option/product-option';
 import { ProductPrice } from '~/src/components/product-price/product-price';
-import { QuantityInput } from '~/src/components/quantity-input/quantity-input';
 import { ShareProductLinks } from '~/src/components/share-product-links/share-product-links';
 import { toast } from '~/src/components/toast/toast';
 import { initializeEcomApiAnonymous } from '~/src/wix/ecom';
@@ -18,6 +17,7 @@ import { useProductDetails } from '~/src/wix/products';
 import { getErrorMessage, removeQueryStringFromUrl } from '~/src/wix/utils';
 
 import styles from './route.module.scss';
+import routeStyles from '../_index/route.module.scss';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
     if (!params.productSlug) throw new Response('Bad Request', { status: 400 });
@@ -91,98 +91,103 @@ export default function ProductDetailsPage() {
     const handleError = (error: unknown) => toast.error(getErrorMessage(error));
 
     return (
-        <div className={styles.page}>
+        <div className={classNames(styles.page, routeStyles['section-paddings'])}>
             <Breadcrumbs breadcrumbs={breadcrumbs} />
+            <div>
+                <div className={styles.content}>
+                    <ProductImages media={media} />
 
-            <div className={styles.content}>
-                <ProductImages media={media} />
-
-                <div>
-                    <h1 className={styles.productName}>{product.name}</h1>
-                    {sku && <p className={styles.sku}>SKU: {sku}</p>}
-
-                    {priceData && (
-                        <ProductPrice
-                            className={styles.price}
-                            price={priceData.formatted?.price}
-                            discountedPrice={priceData.formatted?.discountedPrice}
-                        />
-                    )}
-
-                    {product.description && (
-                        <div
-                            className={styles.description}
-                            dangerouslySetInnerHTML={{ __html: product.description }}
-                        />
-                    )}
-
-                    {productOptions && productOptions.length > 0 && (
-                        <div className={styles.productOptions}>
-                            {productOptions.map((option) => (
-                                <ProductOption
-                                    key={option.name}
-                                    error={
-                                        addToCartAttempted &&
-                                        selectedChoices[option.name!] === undefined
-                                            ? `Select ${option.name}`
-                                            : undefined
-                                    }
-                                    option={option}
-                                    selectedChoice={selectedChoices[option.name!]}
-                                    onChange={(choice) => handleOptionChange(option.name!, choice)}
+                    <div>
+                        <h1 className={styles.productName}>{product.name}</h1>
+                        {sku && <p className={styles.sku}>SKU: {sku}</p>}
+                        <div className={styles.priceFrom}>
+                            <p className={styles.p1}>From</p>
+                            {priceData && (
+                                <ProductPrice
+                                    className={styles.price}
+                                    price={priceData.formatted?.price}
+                                    discountedPrice={priceData.formatted?.discountedPrice}
                                 />
-                            ))}
+                            )}
                         </div>
-                    )}
 
-                    <div className={styles.quantity}>
-                        <label htmlFor="quantity" className={styles.quantityLabel}>
-                            Quantity
-                        </label>
-                        <QuantityInput
-                            id="quantity"
-                            value={quantity}
-                            onChange={handleQuantityChange}
-                            disabled={outOfStock}
-                        />
-                    </div>
+                        {productOptions && productOptions.length > 0 && (
+                            <div className={styles.productOptions}>
+                                {productOptions.map((option) => (
+                                    <ProductOption
+                                        key={option.name}
+                                        error={
+                                            addToCartAttempted &&
+                                            selectedChoices[option.name!] === undefined
+                                                ? `Select ${option.name}`
+                                                : undefined
+                                        }
+                                        option={option}
+                                        selectedChoice={selectedChoices[option.name!]}
+                                        onChange={(choice) =>
+                                            handleOptionChange(option.name!, choice)
+                                        }
+                                    />
+                                ))}
+                            </div>
+                        )}
+                        <p className={styles.p2}>
+                            Size
+                            <div className={styles.SizeOptions}>
+                                <div className={styles.optionsSize}>
+                                    <p className={styles.p3}>40 mm</p>
+                                    <p className={styles.p4}>800$</p>
+                                </div>
+                                <div className={styles.optionsSize}>
+                                    <p className={styles.p3}>40 mm</p>
+                                    <p className={styles.p4}>800$</p>
+                                </div>
+                            </div>
+                        </p>
 
-                    <button
-                        className={classNames('button', 'primaryButton', styles.addToCartButton)}
-                        onClick={() => handleAddToCart().catch(handleError)}
-                        disabled={outOfStock || isAddingToCart}
-                    >
-                        {outOfStock ? 'Out of stock' : 'Add to Cart'}
-                    </button>
-
-                    {product.additionalInfoSections &&
-                        product.additionalInfoSections.length > 0 && (
-                            <Accordion
-                                className={styles.additionalInfoSections}
-                                expandIcon={<PlusIcon width={22} />}
-                                collapseIcon={<MinusIcon width={22} />}
-                                items={product.additionalInfoSections.map((section) => ({
-                                    header: (
-                                        <div className={styles.additionalInfoSectionTitle}>
-                                            {section.title!}
-                                        </div>
-                                    ),
-                                    content: section.description ? (
-                                        <div
-                                            dangerouslySetInnerHTML={{
-                                                __html: section.description,
-                                            }}
-                                        />
-                                    ) : null,
-                                }))}
-                                initialOpenItemIndex={0}
+                        <button
+                            onClick={() => handleAddToCart().catch(handleError)}
+                            disabled={outOfStock || isAddingToCart}
+                            className={routeStyles.labelWithArrow}
+                        >
+                            {outOfStock ? 'Out of stock' : 'Add to Cart'}
+                        </button>
+                        {product.description && (
+                            <div
+                                className={styles.description}
+                                dangerouslySetInnerHTML={{ __html: product.description }}
                             />
                         )}
 
-                    <ShareProductLinks
-                        className={styles.socialLinks}
-                        productCanonicalUrl={canonicalUrl}
-                    />
+                        {product.additionalInfoSections &&
+                            product.additionalInfoSections.length > 0 && (
+                                <Accordion
+                                    className={styles.additionalInfoSections}
+                                    expandIcon={<PlusIcon width={22} />}
+                                    collapseIcon={<MinusIcon width={22} />}
+                                    items={product.additionalInfoSections.map((section) => ({
+                                        header: (
+                                            <div className={styles.additionalInfoSectionTitle}>
+                                                {section.title!}
+                                            </div>
+                                        ),
+                                        content: section.description ? (
+                                            <div
+                                                dangerouslySetInnerHTML={{
+                                                    __html: section.description,
+                                                }}
+                                            />
+                                        ) : null,
+                                    }))}
+                                    initialOpenItemIndex={0}
+                                />
+                            )}
+
+                        <ShareProductLinks
+                            className={styles.socialLinks}
+                            productCanonicalUrl={canonicalUrl}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
