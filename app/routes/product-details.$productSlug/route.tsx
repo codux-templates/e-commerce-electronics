@@ -18,6 +18,7 @@ import { getErrorMessage, removeQueryStringFromUrl } from '~/src/wix/utils';
 
 import styles from './route.module.scss';
 import routeStyles from '../_index/route.module.scss';
+import { LabelWithArrow } from '~/src/components/label-with-arrow/label-with-arrow';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
     if (!params.productSlug) throw new Response('Bad Request', { status: 400 });
@@ -91,10 +92,10 @@ export default function ProductDetailsPage() {
     const handleError = (error: unknown) => toast.error(getErrorMessage(error));
 
     return (
-        <div className={classNames(styles.page, routeStyles['section-paddings'])}>
+        <div className={styles.page}>
             <Breadcrumbs breadcrumbs={breadcrumbs} />
             <div>
-                <div className={styles.content}>
+                <div className={classNames(styles.content, routeStyles['section-paddings'])}>
                     <ProductImages media={media} />
 
                     <div>
@@ -144,51 +145,83 @@ export default function ProductDetailsPage() {
                                 </div>
                             </div>
                         </p>
-
-                        <button
-                            onClick={() => handleAddToCart().catch(handleError)}
-                            disabled={outOfStock || isAddingToCart}
-                            className={routeStyles.labelWithArrow}
-                        >
-                            {outOfStock ? 'Out of stock' : 'Add to Cart'}
-                        </button>
-                        {product.description && (
-                            <div
-                                className={styles.description}
-                                dangerouslySetInnerHTML={{ __html: product.description }}
-                            />
-                        )}
-
-                        {product.additionalInfoSections &&
-                            product.additionalInfoSections.length > 0 && (
-                                <Accordion
-                                    className={styles.additionalInfoSections}
-                                    expandIcon={<PlusIcon width={22} />}
-                                    collapseIcon={<MinusIcon width={22} />}
-                                    items={product.additionalInfoSections.map((section) => ({
-                                        header: (
-                                            <div className={styles.additionalInfoSectionTitle}>
-                                                {section.title!}
-                                            </div>
-                                        ),
-                                        content: section.description ? (
-                                            <div
-                                                dangerouslySetInnerHTML={{
-                                                    __html: section.description,
-                                                }}
-                                            />
-                                        ) : null,
-                                    }))}
-                                    initialOpenItemIndex={0}
+                        <div className={styles.div1}>
+                            <LabelWithArrow
+                                btLabel="Add To Cart"
+                                bgColor1="#000000"
+                                horizontalSpacing="20"
+                                verticalSpacing="12"
+                                onClick={() => handleAddToCart().catch(handleError)}
+                                disabled={outOfStock || isAddingToCart}
+                                className={routeStyles.labelWithArrow}
+                            >
+                                {outOfStock ? 'Out of stock' : 'Add to Cart'}
+                            </LabelWithArrow>
+                            <LabelWithArrow
+                                btLabel="Buy Now"
+                                bgColor1="#FFFFFF"
+                                horizontalSpacing="20"
+                                verticalSpacing="12"
+                                bgColor2="#000000"
+                                className={routeStyles.labelWithArrow}
+                            >
+                                Shop Now
+                            </LabelWithArrow>
+                        </div>
+                        <div>
+                            {product.description && (
+                                <div
+                                    className={styles.description}
+                                    dangerouslySetInnerHTML={{ __html: product.description }}
                                 />
                             )}
-
-                        <ShareProductLinks
-                            className={styles.socialLinks}
-                            productCanonicalUrl={canonicalUrl}
-                        />
+                        </div>
+                        <div>
+                            {product.description && (
+                                <div
+                                    className={styles.description}
+                                    dangerouslySetInnerHTML={{ __html: product.description }}
+                                />
+                            )}
+                        </div>
+                        <div>
+                            {product.description && (
+                                <div
+                                    className={styles.description}
+                                    dangerouslySetInnerHTML={{ __html: product.description }}
+                                />
+                            )}
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div className={routeStyles['section-paddings']}>
+                {product.additionalInfoSections && product.additionalInfoSections.length > 0 && (
+                    <Accordion
+                        className={styles.additionalInfoSections}
+                        expandIcon={<PlusIcon width={22} />}
+                        collapseIcon={<MinusIcon width={22} />}
+                        items={product.additionalInfoSections.map((section) => ({
+                            header: (
+                                <div className={styles.additionalInfoSectionTitle}>
+                                    {section.title!}
+                                </div>
+                            ),
+                            content: section.description ? (
+                                <div
+                                    dangerouslySetInnerHTML={{
+                                        __html: section.description,
+                                    }}
+                                />
+                            ) : null,
+                        }))}
+                        initialOpenItemIndex={0}
+                    />
+                )}
+                <ShareProductLinks
+                    className={styles.socialLinks}
+                    productCanonicalUrl={canonicalUrl}
+                />
             </div>
         </div>
     );

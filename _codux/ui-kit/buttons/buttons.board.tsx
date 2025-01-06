@@ -36,8 +36,26 @@ export default createBoard({
                     <Kit.Description>Secondary Button</Kit.Description>
                 </Kit.Item>
                 <Kit.Item>
-                    <Variant name="Label With Arrow">
-                        <LabelWithArrow>Shop Now</LabelWithArrow>
+                    <Variant name="Primary Button">
+                        <LabelWithArrow
+                            btLabel="Shop Now"
+                            bgColor1="#000000"
+                            horizontalSpacing="20"
+                            verticalSpacing="12"
+                        >
+                            Shop Now
+                        </LabelWithArrow>
+                    </Variant>
+                    <Variant name="Secondary Button">
+                        <LabelWithArrow
+                            btLabel="Shop Now"
+                            bgColor1="#FFFFFF"
+                            horizontalSpacing="20"
+                            verticalSpacing="12"
+                            bgColor2="#000000"
+                        >
+                            Shop Now
+                        </LabelWithArrow>
                     </Variant>
                     <Kit.Description>Label With Arrow</Kit.Description>
                 </Kit.Item>
