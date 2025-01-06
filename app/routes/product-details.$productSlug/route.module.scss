@@ -1,6 +1,6 @@
 .page {
     padding-bottom: 50px;
-    background: var(--primary4);
+    background: var(--page-background-color);
 }
 
 .content {
@@ -8,6 +8,7 @@
     grid-template-columns: 58vw 1fr;
     column-gap: 32px;
     margin-top: 36px;
+    background-color: var(--primary4);
 }
 
 .productName {
@@ -150,4 +151,7 @@
     display: flex;
     gap: 10px;
     padding-bottom: 20px;
+}
+.no-line {
+    border: 0px solid black;
 }

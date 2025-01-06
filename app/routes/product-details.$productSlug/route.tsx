@@ -93,8 +93,8 @@ export default function ProductDetailsPage() {
 
     return (
         <div className={styles.page}>
-            <Breadcrumbs breadcrumbs={breadcrumbs} />
             <div>
+                <Breadcrumbs breadcrumbs={breadcrumbs} />
                 <div className={classNames(styles.content, routeStyles['section-paddings'])}>
                     <ProductImages media={media} />
 
@@ -187,7 +187,7 @@ export default function ProductDetailsPage() {
                         <div>
                             {product.description && (
                                 <div
-                                    className={styles.description}
+                                    className={classNames(styles.description, styles['no-line'])}
                                     dangerouslySetInnerHTML={{ __html: product.description }}
                                 />
                             )}
