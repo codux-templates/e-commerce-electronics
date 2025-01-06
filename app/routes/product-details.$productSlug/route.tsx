@@ -2,10 +2,8 @@ import type { LoaderFunctionArgs } from '@remix-run/node';
 import { type MetaFunction, useLoaderData } from '@remix-run/react';
 import type { GetStaticRoutes } from '@wixc3/define-remix-app';
 import classNames from 'classnames';
-import { Accordion } from '~/src/components/accordion/accordion';
 import { BreadcrumbData, Breadcrumbs } from '~/src/components/breadcrumbs/breadcrumbs';
 import { RouteBreadcrumbs, useBreadcrumbs } from '~/src/components/breadcrumbs/use-breadcrumbs';
-import { MinusIcon, PlusIcon } from '~/src/components/icons';
 import { ProductImages } from '~/src/components/product-images/product-images';
 import { ProductOption } from '~/src/components/product-option/product-option';
 import { ProductPrice } from '~/src/components/product-price/product-price';
@@ -19,6 +17,8 @@ import { getErrorMessage, removeQueryStringFromUrl } from '~/src/wix/utils';
 import styles from './route.module.scss';
 import routeStyles from '../_index/route.module.scss';
 import { LabelWithArrow } from '~/src/components/label-with-arrow/label-with-arrow';
+import { MoreInfo } from '../../../src/components/more-info/more-info';
+import { ProductCard } from '../../../src/components/product-card/product-card';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
     if (!params.productSlug) throw new Response('Bad Request', { status: 400 });
@@ -184,7 +184,7 @@ export default function ProductDetailsPage() {
                                 />
                             )}
                         </div>
-                        <div>
+                        <div className={styles.div2}>
                             {product.description && (
                                 <div
                                     className={classNames(styles.description, styles['no-line'])}
@@ -196,32 +196,15 @@ export default function ProductDetailsPage() {
                 </div>
             </div>
             <div className={routeStyles['section-paddings']}>
-                {product.additionalInfoSections && product.additionalInfoSections.length > 0 && (
-                    <Accordion
-                        className={styles.additionalInfoSections}
-                        expandIcon={<PlusIcon width={22} />}
-                        collapseIcon={<MinusIcon width={22} />}
-                        items={product.additionalInfoSections.map((section) => ({
-                            header: (
-                                <div className={styles.additionalInfoSectionTitle}>
-                                    {section.title!}
-                                </div>
-                            ),
-                            content: section.description ? (
-                                <div
-                                    dangerouslySetInnerHTML={{
-                                        __html: section.description,
-                                    }}
-                                />
-                            ) : null,
-                        }))}
-                        initialOpenItemIndex={0}
-                    />
-                )}
+                <MoreInfo className={styles.moreInfo} />
                 <ShareProductLinks
                     className={styles.socialLinks}
                     productCanonicalUrl={canonicalUrl}
                 />
+            </div>
+            <div className={classNames(styles.RelatedProducts, routeStyles['section-paddings'])}>
+                <h1 className={styles.header1}>You might also like.</h1>
+                <ProductCard />
             </div>
         </div>
     );

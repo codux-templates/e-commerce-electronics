@@ -23,6 +23,7 @@ import {
 import { getErrorMessage } from '~/src/wix/utils';
 
 import styles from './route.module.scss';
+import routeStyles from '../_index/route.module.scss';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
     const url = new URL(request.url);
@@ -100,7 +101,8 @@ export default function ProductsPage() {
         <div className={styles.page}>
             <Breadcrumbs breadcrumbs={breadcrumbs} />
 
-            <div className={styles.content}>
+            <div className={classNames(styles.content, routeStyles['section-paddings'])}>
+                <div />
                 <div className={styles.sidebar}>
                     <nav>
                         <h2 className={styles.sidebarTitle}>Browse by</h2>
@@ -188,6 +190,7 @@ export default function ProductsPage() {
                     )}
                 </div>
             </div>
+            <div className={routeStyles['section-paddings']} />
         </div>
     );
 }

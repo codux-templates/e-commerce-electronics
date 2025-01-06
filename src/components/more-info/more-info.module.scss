@@ -1,0 +1,24 @@
+.root {
+    font: var(--heading3);
+    display: flex;
+    flex-direction: column;
+}
+.p1 {
+    font: var(--paragraph3);
+    width: 50%;
+    max-width: 880px;
+}
+.header1 {
+    margin-bottom: var(--ExtraSmallSpacing);
+}
+.div1 {
+    border-top: 1px solid black;
+    padding-top: 44px;
+    padding-bottom: 44px;
+}
+.withSmallTitle {
+}
+.header2 {
+    font: var(--paragraph3);
+    text-transform: uppercase;
+}

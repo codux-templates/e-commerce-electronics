@@ -1,6 +1,6 @@
 .page {
-    padding-bottom: 50px;
     background: var(--page-background-color);
+    padding-bottom: var(--BigSpacingDesktop);
 }
 
 .content {
@@ -79,7 +79,7 @@
 }
 
 .socialLinks {
-    margin-top: 36px;
+    margin-top: 0px;
 }
 
 @media (max-width: 1024px) {
@@ -154,4 +154,16 @@
 }
 .no-line {
     border: 0px solid black;
+    padding-bottom: var(--small-spacing);
+}
+.div2 {
+}
+.moreInfo {
+    padding: 0px;
+    margin: 0px;
+}
+.RelatedProducts {
+}
+.header1 {
+    margin-bottom: var(--ExtraSmallSpacing);
 }
