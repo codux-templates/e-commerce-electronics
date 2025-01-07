@@ -1,0 +1,31 @@
+.root {
+}
+.header1 {
+    font: var(--heading1);
+    margin-bottom: var(--small-spacing);
+}
+.header2 {
+    font: var(--heading3);
+    margin-bottom: var(--ExtraSmallSpacing);
+}
+.div1 {
+    width: max-content;
+}
+.p1 {
+    font: var(--paragraph1);
+    margin-top: var(--ExtraSmallSpacing);
+    min-height: 5vw;
+}
+.price {
+    font:
+        normal normal 800 normal 24px / 1.2 'DM Sans',
+        sans-serif;
+    width: max-content;
+}
+.div2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 64px;
+}
