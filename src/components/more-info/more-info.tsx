@@ -13,7 +13,7 @@ export const MoreInfo = ({ className }: MoreInfoProps) => {
     return (
         <div className={cx(styles.root, className)}>
             <h3 className={styles.header1}>More info.</h3>
-            <div className={styles.div1}>
+            <div className={styles.DescriptionTopLine}>
                 <p className={styles.p1}>
                     I&apos;m a product detail. I&apos;m a great place to add more information about
                     your product such as sizing, material, care and cleaning instructions. This is
@@ -23,7 +23,7 @@ export const MoreInfo = ({ className }: MoreInfoProps) => {
                     buy with confidence and certainty.
                 </p>
             </div>
-            <div className={cx(styles.div1, styles.withSmallTitle)}>
+            <div className={cx(styles.DescriptionTopLine, styles.withSmallTitle)}>
                 <h1 className={styles.header2}>RETURN &amp; REFUND POLICY</h1>
                 <p className={styles.p1}>
                     I’m a Return and Refund policy. I’m a great place to let your customers know
@@ -32,7 +32,7 @@ export const MoreInfo = ({ className }: MoreInfoProps) => {
                     reassure your customers that they can buy with confidence.
                 </p>
             </div>
-            <div className={cx(styles.div1, styles.withSmallTitle)}>
+            <div className={cx(styles.DescriptionTopLine, styles.withSmallTitle)}>
                 <h1 className={styles.header2}>SHIPPING INFO</h1>
                 <p className={styles.p1}>
                     I’m a Return and Refund policy. I’m a great place to let your customers know

@@ -8,8 +8,7 @@
     font: var(--heading3);
     margin-bottom: var(--ExtraSmallSpacing);
 }
-.div1 {
-    width: max-content;
+.ProductCompare {
 }
 .p1 {
     font: var(--paragraph1);
@@ -28,4 +27,38 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 64px;
+}
+.p2 {
+    font: var(--paragraph3);
+    width: 45%;
+}
+.div3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2.2vw;
+    width: 100%;
+}
+.img1 {
+    width: 100%;
+}
+.DescriptionTopLine {
+    border-top: 1px solid black;
+    padding-top: 44px;
+    padding-bottom: 44px;
+}
+.p3 {
+    font: var(--paragraph3);
+    width: 100px;
+}
+.div1 {
+    min-height: 13vw;
+}
+.wider {
+    width: 200px;
+}
+.f {
+    width: 150px;
+}
+.third {
+    padding-bottom: var(--BigSpacingDesktop);
 }
