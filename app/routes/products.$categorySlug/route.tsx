@@ -24,6 +24,7 @@ import { getErrorMessage } from '~/src/wix/utils';
 
 import styles from './route.module.scss';
 import routeStyles from '../_index/route.module.scss';
+import { Compare } from '../../../src/components/compare/compare';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
     const url = new URL(request.url);
@@ -190,7 +191,9 @@ export default function ProductsPage() {
                     )}
                 </div>
             </div>
-            <div className={routeStyles['section-paddings']} />
+            <div className={routeStyles['section-paddings']}>
+                <Compare />
+            </div>
         </div>
     );
 }
