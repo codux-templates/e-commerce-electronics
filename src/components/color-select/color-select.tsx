@@ -32,7 +32,10 @@ export const ColorSelect = ({
                         [styles.selected]: selectedId === option.id,
                         [styles.crossedOut]: option.crossedOut,
                     })}
-                    onClick={() => onChange(option.id)}
+                    onClick={(event) => {
+                        event.preventDefault();
+                        onChange(option.id);
+                    }}
                 >
                     <div
                         className={styles.colorBox}
