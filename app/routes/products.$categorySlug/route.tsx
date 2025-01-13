@@ -6,8 +6,6 @@ import { useEffect } from 'react';
 import { AppliedProductFilters } from '~/src/components/applied-product-filters/applied-product-filters';
 import { Breadcrumbs } from '~/src/components/breadcrumbs/breadcrumbs';
 import { RouteBreadcrumbs, useBreadcrumbs } from '~/src/components/breadcrumbs/use-breadcrumbs';
-import { CategoryLink } from '~/src/components/category-link/category-link';
-import { ProductFilters } from '~/src/components/product-filters/product-filters';
 import { ProductGrid } from '~/src/components/product-grid/product-grid';
 import { ProductSortingSelect } from '~/src/components/product-sorting-select/product-sorting-select';
 import { toast } from '~/src/components/toast/toast';
@@ -25,6 +23,7 @@ import { getErrorMessage } from '~/src/wix/utils';
 import styles from './route.module.scss';
 import routeStyles from '../_index/route.module.scss';
 import { Compare } from '../../../src/components/compare/compare';
+import { BrowseBy } from '../../../src/components/browse-by/browse-by';
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
     const url = new URL(request.url);
@@ -103,42 +102,8 @@ export default function ProductsPage() {
             <Breadcrumbs breadcrumbs={breadcrumbs} />
 
             <div className={classNames(styles.content, routeStyles['section-paddings'])}>
-                <div />
-                <div className={styles.sidebar}>
-                    <nav>
-                        <h2 className={styles.sidebarTitle}>Browse by</h2>
-                        <ul className={styles.categoryList}>
-                            {allCategories.map((category) => (
-                                <li key={category._id} className={styles.categoryListItem}>
-                                    <CategoryLink
-                                        categorySlug={category.slug!}
-                                        className={({ isActive }) =>
-                                            classNames(styles.categoryLink, {
-                                                [styles.categoryLinkActive]: isActive,
-                                            })
-                                        }
-                                    >
-                                        {category.name}
-                                    </CategoryLink>
-                                </li>
-                            ))}
-                        </ul>
-
-                        {category.numberOfProducts !== 0 && (
-                            <div className={styles.filters}>
-                                <h2
-                                    className={classNames(styles.sidebarTitle, styles.filtersTitle)}
-                                >
-                                    Filters
-                                </h2>
-                                <ProductFilters
-                                    minAvailablePrice={productPriceBounds.lowest}
-                                    maxAvailablePrice={productPriceBounds.highest}
-                                    currency={currency}
-                                />
-                            </div>
-                        )}
-                    </nav>
+                <div>
+                    <BrowseBy />
                 </div>
 
                 <div className={styles.main}>

@@ -33,11 +33,19 @@ export const BrowseBy = ({ className }: BrowseByProps) => {
                 </div>
                 <div className={styles.CategoryTab}>
                     <img
-                        src="https://static.wixstatic.com/media/4da84e_b4deba4e7b5a40e48768f9bc7ab143b0~mv2.png/v1/fit/w_640,h_640/watch_edited.png.png"
+                        src="https://static.wixstatic.com/media/4da84e_0addb3429abc45498bf8dff9eac4e4ed~mv2.png/v1/fit/w_640,h_640/7.-BALO-HEADPHONES.png.png"
                         alt=""
-                        className={cx(styles.img1, styles.img2, 'heading1')}
+                        className={cx(styles.img1, styles.img2, 'heading1', styles.img3)}
                     />
                     <p className={cx(styles.p2, styles.lines)}>Speakers &amp; Headphones</p>
+                </div>
+                <div className={styles.CategoryTab}>
+                    <img
+                        src="https://static.wixstatic.com/media/4da84e_da86ad85d9b24878baddbb1b09795a5a~mv2.png/v1/fit/w_640,h_640/laptops.png.png"
+                        alt=""
+                        className={cx(styles.img1, styles.img2, 'heading1', styles.img4)}
+                    />
+                    <p className={styles.p2}>Laptops</p>
                 </div>
             </div>
         </div>
